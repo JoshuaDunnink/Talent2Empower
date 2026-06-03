@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talent2Empower | Groei voor kinderen &amp; organisaties</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#fcbb4a",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#426464",
+                    "on-surface-variant": "#55433c",
+                    "surface-container-highest": "#e5e2e1",
+                    "inverse-primary": "#ffb599",
+                    "secondary-container": "#ffbe4d",
+                    "surface-dim": "#dcd9d9",
+                    "error-container": "#ffdad6",
+                    "surface-white": "#FFFFFF",
+                    "on-tertiary-container": "#173a3a",
+                    "outline-variant": "#dbc1b8",
+                    "on-surface": "#1c1b1b",
+                    "surface-container-low": "#f6f3f2",
+                    "outline": "#88726a",
+                    "tertiary-fixed": "#c5eae9",
+                    "secondary": "#7f5700",
+                    "inverse-surface": "#313030",
+                    "accent-warm": "#FFD9B3",
+                    "primary": "#9a4621",
+                    "on-tertiary-fixed": "#002020",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface-bright": "#fcf9f8",
+                    "primary-fixed": "#ffdbce",
+                    "surface": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#ffb599",
+                    "on-primary-fixed-variant": "#7b2f0b",
+                    "on-secondary-fixed-variant": "#604100",
+                    "surface-cream": "#FDF8F3",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#2a4c4c",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e5e2e1",
+                    "primary-container": "#e88258",
+                    "background": "#fcf9f8",
+                    "secondary-fixed": "#ffdeae",
+                    "on-background": "#1c1b1b",
+                    "on-primary-container": "#611f00",
+                    "surface-container": "#f0eded",
+                    "tertiary-container": "#81a4a4",
+                    "surface-container-high": "#eae7e7",
+                    "tertiary-fixed-dim": "#a9cdcd",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#370e00",
+                    "on-secondary-fixed": "#281900",
+                    "on-secondary-container": "#724d00",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#9a4621"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "stack-sm": "12px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Epilogue"],
+                    "display-lg-mobile": ["Epilogue"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Epilogue"],
+                    "display-lg": ["Epilogue"],
+                    "caption": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(circle at 2px 2px, #dbc1b8 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-surface-cream text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-surface-white/90 backdrop-blur-md shadow-sm">
+<div class="text-headline-sm font-headline-sm text-primary">Talent2Empower</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#wat-wij-doen">Diensten</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#cofun">CoFun</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#voor-wie">Voor wie</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#over-ons">Over Ons</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden md:flex px-6 py-2 bg-primary text-on-primary rounded-lg font-label-md transition-transform scale-95 active:scale-90" href="#contact">Contact</a>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop bg-surface-cream">
+<div class="max-w-container-max mx-auto grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-6 z-10 space-y-stack-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-fixed rounded-full text-on-primary-fixed-variant font-label-md">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">colors_spark</span>
+                        Samen naar de volgende stap
+                    </div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
+                        Rust voor ouders, <span class="text-primary italic">controle voor scholen</span> en status voor sport.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Talent2Empower biedt specialistische ondersteuning die zorgt voor de doorbraak waar u naar zoekt. Van individuele begeleiding tot innovatieve lespakketten.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="px-8 py-4 bg-primary text-on-primary rounded-lg font-label-md shadow-lg shadow-primary/20 hover:scale-105 transition-transform" href="#contact">Plan een kennismaking</a>
+<a class="px-8 py-4 border-2 border-outline-variant text-on-surface rounded-lg font-label-md hover:bg-white/50 transition-all" href="#wat-wij-doen">Bekijk onze oplossingen</a>
+</div>
+</div>
+<div class="md:col-span-6 relative h-[400px] md:h-[600px]">
+<div class="absolute inset-0 bg-accent-warm/30 rounded-full scale-125 blur-3xl opacity-30 -z-10"></div>
+<img alt="Talent2Empower Hero" class="w-full h-full object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLvy-eRbL5DECfkcWE8VPgTHjJjuCAKvdTgZ1CdrELxBSDhptkDXbO2Fhy8xueLR7mAxsUchP4OC-O_aZdo4QvXx7m2CnFiZdJJ8watpy3z28GQ7EwH_GYnMoTXHzQVTz1Br9KSV3fheisMsOG-J4gICFORe8YZeUaJQdF7tfU3EIEi0awM2ZNVDm39d0FLG3nlPhDe-_DUgMeQ3NL8_gRcBeYXX0CsIzvWos_FboRsrkHDK_sIenp-VQnw"/>
+<div class="absolute bottom-10 -left-10 bg-white p-6 rounded-xl shadow-xl hidden md:block animate-bounce-slow">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">verified</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Bewezen impact</p>
+<p class="text-caption text-on-surface-variant">Specialistische expertise</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+<span class="text-caption font-label-md uppercase tracking-widest">Scroll</span>
+<span class="material-symbols-outlined animate-bounce">expand_more</span>
+</div>
+</section>
+<!-- Wat Wij Doen -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-white" id="wat-wij-doen">
+<div class="max-w-container-max mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-stack-lg reveal">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Onze Expertise</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Wij ondersteunen groei op elk niveau met programma's die specifiek zijn ontworpen voor hoogbegaafde kinderen en de organisaties om hen heen.
+                    </p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Peergroepen -->
+<div class="group bg-surface-cream p-base rounded-xl reveal shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="aspect-[1.29] rounded-lg overflow-hidden mb-6">
+<img alt="Peergroepen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLspI01GvfLKqKHMCfmtbusO22TyAUmzKn3WbOGmfpTSSM9V-Kkgc6QSGCQJym3T4B8XC6kv8uQIU3dFsBmfvl_XnREr5wHMXgsKGITipTKCUthED_SveRRTRg1Pb0DQtlEEfOwP0-85irqXPCxZA8u0drWjQthDvODHWl6oAfkp-FvJD-wTRCtnfcA7gmOMU-sxEpKGol1sR0_rataKNZ-bpQfxz2Qwahm3jLsay6Shu-od6ldcylmwUQ"/>
+</div>
+<div class="p-4 pt-0">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Peergroepen</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Waar gelijkgestemden samenkomen om uitgedaagd te worden, te leren en eindelijk begrepen te worden.
+                            </p>
+<button class="flex items-center gap-2 text-primary font-label-md group-hover:gap-4 transition-all">
+                                Ontdek de groepen <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Begeleiding -->
+<div class="group bg-surface-cream p-base rounded-xl reveal shadow-sm hover:shadow-xl transition-all duration-300" style="transition-delay: 100ms;">
+<div class="aspect-[1.29] rounded-lg overflow-hidden mb-6">
+<img alt="Begeleiding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLtB89FA-Dz8GT06De-C8o4fZpEYitNPmUyAhLXyyv1yulFUb_Wa6yL2kP665O-MvxWigXyeKhh_HNlXKYP2W-OPs7UG2gu5Uk9Q5uuLbcacGfbzuvZ_msOEfrwkoG7SsC4cniuoMFj8C2we1sruKal6KBLcFikgV2mp5q0oaRG3A-cjbPcjryGxFxYJuMLxsvMi9XrR20MOaDDgMi8AS8hEyPNV74iSdz-ml-M6on2rEv1TIththf6E7XY"/>
+</div>
+<div class="p-4 pt-0">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Begeleiding</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Maatwerk coaching voor kinderen die meer nodig hebben dan het standaard aanbod om echt te floreren.
+                            </p>
+<button class="flex items-center gap-2 text-primary font-label-md group-hover:gap-4 transition-all">
+                                Bekijk trajecten <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Organisatiegroei -->
+<div class="group bg-surface-cream p-base rounded-xl reveal shadow-sm hover:shadow-xl transition-all duration-300" style="transition-delay: 200ms;">
+<div class="aspect-[1.29] rounded-lg overflow-hidden mb-6">
+<img alt="Organisatiegroei" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLuCvameIb0e-ZQRjWBikXl9p3Ero1kyjo2dIhc47hZs-U96kfPrgoYN-FTamvecrPqZBGdSboobeTGisFO6MSIXb-majdwG9mASloXYvMshj3GO0PdAtbI234e_fc7rPOHnYPg-aiLZ5LfhWKXu2guLNk5aLPeSS07Ra3NNS1who-IOPL5UF92dYM6DNCzxzmLXWdFeGJog3MycyegTjhCc2Lwkrv-4c9cSsqrXjcYxhzLlbPnUn_ZIwg"/>
+</div>
+<div class="p-4 pt-0">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Professionalisering</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Strategische ondersteuning voor scholen en sportverenigingen om hun kwaliteit en aanbod naar een hoger niveau te tillen.
+                            </p>
+<button class="flex items-center gap-2 text-primary font-label-md group-hover:gap-4 transition-all">
+                                Start groei <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CoFun Section (Featured Product for Schools) -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-tertiary text-on-tertiary overflow-hidden" id="cofun">
+<div class="max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-6 reveal">
+<div class="inline-block px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg font-label-md uppercase tracking-wider text-xs">Flagship Product</div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg">Spelend beter leren met <span class="text-tertiary-fixed">CoFun</span></h2>
+<p class="font-body-lg text-body-lg opacity-90">
+                            CoFun is hét lespakket om de executieve functies van kinderen te ontwikkelen door in te zetten op de cognitieve functies. Wij geven scholen de controle terug over de ontwikkeling van hoogbegaafde leerlingen die vastlopen.
+                        </p>
+<div class="space-y-4 pt-4">
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<p class="font-body-md">Inzicht in denkprocessen door observatie en reflectie.</p>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">sports_esports</span>
+</div>
+<p class="font-body-md">Spelend leren: Kinderen leren het best door te doen.</p>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+</div>
+<p class="font-body-md">Groei van binnenuit door basisfuncties te versterken.</p>
+</div>
+</div>
+<div class="pt-8">
+<a class="px-8 py-4 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg font-label-md shadow-xl hover:scale-105 transition-transform inline-block" href="#">Ontdek CoFun voor uw school</a>
+</div>
+</div>
+<div class="relative reveal" style="transition-delay: 200ms;">
+<div class="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl -z-10"></div>
+<img alt="CoFun in de klas" class="rounded-2xl shadow-2xl w-full object-cover aspect-video md:aspect-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLtB89FA-Dz8GT06De-C8o4fZpEYitNPmUyAhLXyyv1yulFUb_Wa6yL2kP665O-MvxWigXyeKhh_HNlXKYP2W-OPs7UG2gu5Uk9Q5uuLbcacGfbzuvZ_msOEfrwkoG7SsC4cniuoMFj8C2we1sruKal6KBLcFikgV2mp5q0oaRG3A-cjbPcjryGxFxYJuMLxsvMi9XrR20MOaDDgMi8AS8hEyPNV74iSdz-ml-M6on2rEv1TIththf6E7XY"/>
+<div class="absolute -bottom-6 -right-6 p-6 bg-surface-white rounded-xl shadow-xl max-w-[200px] hidden lg:block">
+<p class="text-primary font-bold text-headline-sm mb-1">Cofun.nl</p>
+<p class="text-caption text-on-surface-variant">De nieuwe standaard in cognitieve functies.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Voor Wie Section (Asymmetric Bento) -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-cream overflow-hidden" id="voor-wie">
+<div class="max-w-container-max mx-auto">
+<div class="grid md:grid-cols-12 gap-gutter">
+<div class="md:col-span-5 reveal">
+<div class="sticky top-24 space-y-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Onze Waarde Oplossingen</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                                Elke doelgroep heeft unieke behoeften. Wij bieden de specifieke tools en begeleiding die echt het verschil maken.
+                            </p>
+<img alt="Mentale Rust" class="rounded-2xl shadow-lg w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvGF-KyIi7hiMINEL-naCfM6aaCf1MGmzCVKMbIjH2AZtPJF70FNDmFf8arYedynrnGeIpBoAqsRhVTM-XMTvrhwGWO4g_vBJHzVb2KetoAbMtFwX2AzKhj6W8tjG3BmW14WURjvojTycAT7YgFZFlf_zgBM2P-xsZGimqibbiGqF2O7pUBm0U9fz1JPUf-xM3a8JbHKL-wavBnixqNssMT6GV7rIBtjL8D2CriFMJpUSct0kUoQzYVfg"/>
+</div>
+</div>
+<div class="md:col-span-7 grid gap-6">
+<!-- Ouders -->
+<div class="p-8 bg-white rounded-2xl shadow-sm reveal border-l-4 border-primary">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">spa</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Mentale rust voor ouders</h3>
+<p class="text-on-surface-variant mb-4">U ziet dat uw kind vastloopt en dat raakt u. Wij bieden de verlichting en expertise die u nodig heeft. Weet dat uw kind in goede handen is bij specialisten die hen écht zien.</p>
+<a class="text-primary font-label-md hover:underline decoration-2" href="#contact">Rust voor uw gezin →</a>
+</div>
+</div>
+</div>
+<!-- Scholen -->
+<div class="p-8 bg-white rounded-2xl shadow-sm reveal border-l-4 border-tertiary" style="transition-delay: 100ms;">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary">settings_suggest</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Controle voor scholen</h3>
+<p class="text-on-surface-variant mb-4">Krijg de regie terug over de begeleiding van hoogbegaafde leerlingen. Met CoFun bieden we een wetenschappelijk onderbouwde methodiek om motivatie en groei te managen.</p>
+<a class="text-tertiary font-label-md hover:underline decoration-2" href="#cofun">Controleer uw groeibeleid →</a>
+</div>
+</div>
+</div>
+<!-- Sportverenigingen -->
+<div class="p-8 bg-white rounded-2xl shadow-sm reveal border-l-4 border-secondary" style="transition-delay: 200ms;">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">military_tech</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Aanzien voor sportverenigingen</h3>
+<p class="text-on-surface-variant mb-4">Verhoog de status van uw vereniging door professionalisering. Trek meer leden aan door een kwalitatief hoogwaardig programma voor talentontwikkeling en betere prestaties.</p>
+<a class="text-secondary font-label-md hover:underline decoration-2" href="#contact">Professionaliseer uw vereniging →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Over Ons -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-white" id="over-ons">
+<div class="max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 reveal">
+<img alt="Over Talent2Empower" class="rounded-3xl shadow-2xl" src="https://lh3.googleusercontent.com/aida/AP1WRLuCvameIb0e-ZQRjWBikXl9p3Ero1kyjo2dIhc47hZs-U96kfPrgoYN-FTamvecrPqZBGdSboobeTGisFO6MSIXb-majdwG9mASloXYvMshj3GO0PdAtbI234e_fc7rPOHnYPg-aiLZ5LfhWKXu2guLNk5aLPeSS07Ra3NNS1who-IOPL5UF92dYM6DNCzxzmLXWdFeGJog3MycyegTjhCc2Lwkrv-4c9cSsqrXjcYxhzLlbPnUn_ZIwg"/>
+</div>
+<div class="order-1 md:order-2 space-y-6 reveal">
+<h2 class="font-headline-md text-headline-md text-on-surface">Over Talent2Empower</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Talent2Empower is geboren uit de overtuiging dat talent altijd gezien moet worden. Wij transformeren uitdagingen in kansen voor zowel het individu als de organisatie.
+                        </p>
+<div class="grid sm:grid-cols-2 gap-6 pt-4">
+<div class="p-6 bg-surface-cream rounded-xl">
+<h4 class="font-headline-sm text-primary mb-2">Missie</h4>
+<p class="text-caption text-on-surface-variant">Het fundament versterken voor duurzame groei en blijvende rust.</p>
+</div>
+<div class="p-6 bg-surface-cream rounded-xl">
+<h4 class="font-headline-sm text-primary mb-2">Visie</h4>
+<p class="text-caption text-on-surface-variant">Een landschap waarin elke school en sportclub de tools heeft om talent te empoweren.</p>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant italic border-l-4 border-primary pl-4 py-2">
+                            "Wanneer talent gezien wordt, ontstaat er niet alleen groei, maar ook de mentale ruimte om te excelleren."
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-pattern" id="contact">
+<div class="max-w-container-max mx-auto">
+<div class="bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2 reveal">
+<div class="p-12 bg-primary text-on-primary space-y-8">
+<div>
+<h2 class="font-headline-md text-headline-md mb-4">Zet de eerste stap</h2>
+<p class="opacity-90">Klaar voor meer rust, controle of groei? Laat ons weten hoe we kunnen helpen.</p>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<p>info@talent2empower.nl</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<p>Nederland - Werkzaam op locatie</p>
+</div>
+</div>
+<div class="pt-8">
+<div class="w-full aspect-video rounded-xl overflow-hidden grayscale opacity-50 contrast-125 bg-primary-container/20">
+<img alt="Focus op Nederland" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArKvjfOZYKzvnLuxlzu6c6INNGWR5_D_B6IG-_-m25aTNSBqCgnyTjjIudJdlFIDe7mkerbw_6R2JjoU7JwGgXsoL-E9XgXlHWwsjahzmxiCpnMoTjlL81_w4PlTim-LkqZ_yx9I0b9_RacBFr5n3Rl1EuuADUPS3IfVnfIPDoJ-vAqyEykLvEaRLm23W3hNCPLMGR8CBKejtZJgaoJL7pEXwZ7g0PkSNwkEwTI8fzYhWA4mHFWcxWU7FX5984UAsNkMrLNZq-WC0"/>
+</div>
+</div>
+</div>
+<div class="p-12 bg-white">
+<form class="space-y-6" onsubmit="event.preventDefault(); alert('Bedicht verzonden! We nemen spoedig contact met u op.');">
+<div class="grid sm:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Naam</label>
+<input class="w-full px-4 py-3 rounded-lg border-outline-variant focus:ring-primary focus:border-primary bg-surface-bright" placeholder="Uw naam" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">E-mailadres</label>
+<input class="w-full px-4 py-3 rounded-lg border-outline-variant focus:ring-primary focus:border-primary bg-surface-bright" placeholder="naam@voorbeeld.nl" required="" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Ik ben geïnteresseerd voor:</label>
+<select class="w-full px-4 py-3 rounded-lg border-outline-variant focus:ring-primary focus:border-primary bg-surface-bright">
+<option>Kies een optie</option>
+<option>Ouder - Rust voor mijn gezin</option>
+<option>School - Controle &amp; CoFun</option>
+<option>Sport - Professionalisering</option>
+<option>Anders</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface-variant">Bericht</label>
+<textarea class="w-full px-4 py-3 rounded-lg border-outline-variant focus:ring-primary focus:border-primary bg-surface-bright" placeholder="Hoe kunnen we uw situatie verbeteren?" rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-label-md hover:bg-primary-container transition-all shadow-lg shadow-primary/20" type="submit">
+                                Verstuur bericht
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-container-max mx-auto grid md:grid-cols-12 gap-gutter">
+<div class="md:col-span-5 space-y-6">
+<div class="text-headline-sm font-headline-sm text-on-surface">Talent2Empower</div>
+<p class="text-body-md text-on-surface-variant max-w-sm">
+                    Gespecialiseerd in het ontketenen van potentieel bij hoogbegaafde kinderen en het professionaliseren van de organisaties die hen vormen.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-outline-variant/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-outline-variant/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-3">
+<h4 class="font-label-md uppercase tracking-widest text-primary mb-6">Focusgebieden</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#voor-wie">Voor Ouders</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#cofun">Voor Scholen (CoFun)</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#voor-wie">Voor Sportverenigingen</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#over-ons">Over ons</a></li>
+</ul>
+</div>
+<div class="md:col-span-4">
+<h4 class="font-label-md uppercase tracking-widest text-primary mb-6">Contact</h4>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                        info@talent2empower.nl
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">language</span>
+                        www.cofun.nl
+                    </li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-stack-lg pt-gutter border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-caption text-on-surface-variant">© 2024 Talent2Empower. Alle rechten voorbehouden.</p>
+<div class="flex gap-6 text-caption">
+<a class="text-on-surface-variant hover:text-primary" href="#">Privacybeleid</a>
+<a class="text-on-surface-variant hover:text-primary" href="#">Algemene Voorwaarden</a>
+</div>
+</div>
+</footer>
+<script>
+        // Reveal on scroll logic
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Initial check
+        revealOnScroll();
+
+        // Smooth scroll adjustment for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>

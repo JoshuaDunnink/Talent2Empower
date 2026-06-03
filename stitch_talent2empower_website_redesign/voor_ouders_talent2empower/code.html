@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talent2Empower | Ouders - Mentale Rust</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#b9cac4",
+                        "surface-container-low": "#f2f3ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#7316ff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#e2d3ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb59a",
+                        "on-background": "#131b2e",
+                        "surface-container-high": "#e2e7ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-secondary-fixed-variant": "#802a00",
+                        "surface-tint": "#006b5b",
+                        "primary-fixed": "#26fedc",
+                        "background": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#e9ddff",
+                        "primary-fixed-dim": "#00dfc1",
+                        "on-primary-fixed-variant": "#005144",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-fixed": "#23005b",
+                        "secondary-container": "#cd4800",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#dae2fd",
+                        "surface-dim": "#d2d9f4",
+                        "on-surface-variant": "#3a4a46",
+                        "surface-container-highest": "#dae2fd",
+                        "primary-container": "#00f5d4",
+                        "on-primary-container": "#006c5c",
+                        "tertiary": "#7212ff",
+                        "primary": "#006b5b",
+                        "inverse-on-surface": "#eef0ff",
+                        "inverse-primary": "#00dfc1",
+                        "secondary-fixed": "#ffdbce",
+                        "on-secondary-fixed": "#370e00",
+                        "on-surface": "#131b2e",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-primary-fixed": "#00201a",
+                        "secondary": "#a33800",
+                        "outline": "#6a7b76",
+                        "surface-container": "#eaedff",
+                        "on-tertiary-fixed-variant": "#5700c9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Epilogue"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Epilogue"],
+                        "display-lg": ["Epilogue"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Epilogue"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -20px rgba(0, 107, 91, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="bg-surface-container-lowest sticky top-0 z-50 transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">Talent2Empower</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Ouders</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Scholen</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Sportverenigingen</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Over Ons</a>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-lg font-bold hover:opacity-90 transition-all active:opacity-80">Contact</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[80vh] flex items-center pt-20 pb-12 overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-container rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-container-max relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8 max-w-2xl">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md tracking-wider">MENTALE RUST</span>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background leading-tight">
+                        Weer rust in huis, omdat uw kind eindelijk wordt gezien.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Begrijpen wat er echt speelt bij onderpresteren of terugtrekking is de eerste stap naar verbinding. Wij begeleiden hoogbegaafde en sensitieve kinderen om hun talent weer met plezier in te zetten.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 shadow-lg shadow-secondary/20 transition-all">Direct Hulp Vragen</button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary/5 transition-all">Ontdek onze aanpak</button>
+</div>
+</div>
+<div class="relative rounded-[2rem] overflow-hidden shadow-2xl group">
+<img alt="Warm home scene with parent and child" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcW_xBgfhC_KY-c7LYn0Ic7e3SfSVFEb_oMmdGCCayH-ljk5ZZzQXdo6SIFFiD6mbHTROnYaDizUY8eqx6lSw1oAmUYvIuqCKCgSJ8oQpfKMddWI8sHuwiFuzRozs9ig4IEyvUfiQs8taQReENTh4dbXB-Iox8w9jzgam_f8aG0_XbTKnDOZ4iApav5AI6o0yvM-E3nwmK9fKoiM47YgRv2TfCACJOtoODfxlyFsOLB4foxaJ4OwjsC6lC_DphYmMe0XaqXFLGpw8"/>
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">94% van de ouders</p>
+<p class="text-on-surface-variant text-sm">ervaart meer harmonie in huis na 3 maanden.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Bento Grid Content -->
+<section class="py-24 bg-white">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-container-max">
+<div class="mb-16 text-center max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">De signalen begrijpen</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Wanneer een kind vastloopt, uit zich dat vaak in gedrag dat we niet direct begrijpen. Wij kijken voorbij de buitenkant naar de bron van de blokkade.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Large Card: Peergroepen -->
+<div class="md:col-span-2 bento-card bg-surface-container-low p-10 rounded-[2rem] border border-outline-variant flex flex-col justify-between">
+<div>
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8">
+<span class="material-symbols-outlined text-4xl" data-icon="groups">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Peergroepen: Herkenning &amp; Groei</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mb-6">
+                            Soms is de grootste stap naar rust de wetenschap dat je niet alleen bent. In onze peergroepen ontmoeten kinderen ontwikkelingsgelijken. Hier hoeven ze zich niet aan te passen, maar mogen ze ontdekken wie ze zijn.
+                        </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+                                Sociale vaardigheden oefenen in een veilige omgeving
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+                                Versterken van de eigen identiteit
+                            </li>
+</ul>
+</div>
+<img class="w-full h-64 object-cover rounded-xl mt-4" data-alt="A small group of children engaged in a collaborative creative activity in a bright, modern educational studio. The atmosphere is warm and inclusive, with soft natural sunlight filtering through large windows. The interior design features light wood textures and soft teal accents, reflecting a professional yet nurturing professional environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0J9Gnjyjs32g7UXBNXXXY3z93qiBVUrYQ0R6BCgwQgtkGoyyaJCwgp2MISoRgWzcq7QUADwsXB6Lp725R94GbQopVwxqH6yOpAhJp7fR2vDfw1iBwKsHotHKKwNeNMsUP4dZXyZ-ixgJTYP6fEz9NAsi4ohv3SeK7BZFIHhY6L5uzmnYftXLKsMVpcDTHg9AAZV2lvGTxtGlEHuHIxbHKYXrYA8A_yWQf9F2x0XjrgDIN3RhbgyDn294XgGmFpgfS2qEBDwuQc0A"/>
+</div>
+<!-- Small Card: Individual Coaching -->
+<div class="bento-card bg-on-background text-white p-10 rounded-[2rem] flex flex-col">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center text-on-primary-container mb-8">
+<span class="material-symbols-outlined text-4xl" data-icon="person_search">person_search</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Individuele Coaching</h3>
+<p class="font-body-md text-body-md text-surface-variant mb-auto">
+                        Maatwerk begeleiding gericht op de specifieke behoeften van uw kind. We werken aan executieve functies, faalangst of motivatie.
+                    </p>
+<div class="pt-8">
+<a class="inline-flex items-center gap-2 text-primary-container font-bold group" href="#">
+                            Lees meer over coaching
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Info Card: Underperformance -->
+<div class="bento-card bg-surface-container-high p-8 rounded-[2rem] border border-outline-variant">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-4">FOCUSPUNT</span>
+<h4 class="font-headline-md text-headline-md text-on-background mb-4">Onderpresteren</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Is het luiheid of onvermogen? Vaak schuilt er een gebrek aan uitdaging of angst om te falen achter de daling in prestaties.
+                    </p>
+</div>
+<!-- Info Card: Withdrawal -->
+<div class="bento-card bg-primary text-white p-8 rounded-[2rem]">
+<span class="font-label-sm text-label-sm text-primary-container uppercase tracking-widest block mb-4">FOCUSPUNT</span>
+<h4 class="font-headline-md text-headline-md mb-4">Terugtrekking</h4>
+<p class="font-body-md text-body-md text-surface-bright/80">
+                        Wanneer de buitenwereld te luid wordt, trekt een sensitief kind zich terug. Wij bouwen een brug terug naar de verbinding.
+                    </p>
+</div>
+<!-- Info Card: Results -->
+<div class="bento-card bg-white p-8 rounded-[2rem] border-2 border-primary/20 flex flex-col justify-center items-center text-center">
+<p class="text-6xl font-display-lg text-primary mb-2">90+</p>
+<p class="font-label-md text-label-md text-on-surface-variant">TEVREDEN GEZINNEN PER JAAR</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Section -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-container-max relative">
+<div class="absolute -top-12 -left-12 opacity-5 text-[12rem] font-display-lg text-primary leading-none select-none">“</div>
+<div class="max-w-4xl mx-auto text-center">
+<blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-10 italic">
+                    "Voor het eerst in jaren hebben we het gevoel dat onze zoon écht begrepen wordt. De rust in huis is teruggekeerd, en hij gaat weer met een glimlach naar school."
+                </blockquote>
+<div class="flex items-center justify-center gap-4">
+<img class="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="A portrait of a professional woman in her 40s with a warm, genuine smile, representing a satisfied parent. The lighting is soft and natural, with a blurred domestic background. The image has a high-quality, authentic feel that matches the calm and supportive brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCesU3Dj_7sflzAdxXqctW0LyYK_YLw8Q00P7c3tJUfZNpd5nRMW3De9osN3KYaiyRqGKF841QaZ2I5uHojyufXeAUZXafjTY-LV8AeJ3jfXXx4SJ2cskP3QiM9tkm1SE_DDEn8eal8Bk9kueHK7mJTsd-1TEXXHcrWKFfJWm2udGHsn2Q4wI8QOjxBY_Kew4JCaHNLIzE_dSFVLk_F4soGY1VtehbzHO-VwIF8P5A8A8nTCIFGJrwrXHlspUsBVKUfsx2qtxzalfA"/>
+<div class="text-left">
+<p class="font-bold text-on-background">Marije de V.</p>
+<p class="text-sm text-on-surface-variant font-label-md">Moeder van Jasper (11)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-container-max">
+<div class="bg-secondary p-12 md:p-20 rounded-[3rem] text-center text-on-secondary relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-8">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg leading-tight">Begin vandaag nog aan de weg naar rust.</h2>
+<p class="font-body-lg text-body-lg opacity-90">
+                        Heeft u het gevoel dat uw kind meer in zijn mars heeft, maar weet u niet hoe u dit naar boven haalt? Plan een vrijblijvend kennismakingsgesprek.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-secondary px-10 py-4 rounded-xl font-bold text-lg hover:bg-surface-bright transition-all">Plan Kennismaking</button>
+<button class="border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">Download Brochure</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-high border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="font-headline-md text-headline-md font-bold text-primary">Talent2Empower</div>
+<p class="text-on-surface-variant text-sm">Specialisten in hoogbegaafdheid, hoogsensitiviteit en onderwijsondersteuning.</p>
+</div>
+<div>
+<h5 class="font-bold text-on-background mb-6">Navigatie</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all font-body-md" href="#">Ouders</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all font-body-md" href="#">Scholen</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all font-body-md" href="#">Sportverenigingen</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-on-background mb-6">Contact</h5>
+<ul class="space-y-4 text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">mail</span>
+                        info@talent2empower.nl
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        Utrecht, Nederland
+                    </li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-on-background mb-6">Juridisch</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all font-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all font-body-md" href="#">Algemene Voorwaarden</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary underline transition-all font-body-md" href="#">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto border-t border-outline-variant/30 text-center text-on-surface-variant text-sm">
+            © 2024 Talent2Empower. Alle rechten voorbehouden.
+        </div>
+</footer>
+<script>
+        // Smooth scroll appearance
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

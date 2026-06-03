@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home" description="Specialistische begeleiding voor hoogbegaafde kinderen en strategische groei voor scholen en sportverenigingen.">
+
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img alt="Professionele begeleiding - kind krijgt de aandacht die het verdient" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHDAWbeBeYD1UgUrAhmSPnXGED_uskOhIvbv3pCfTGdIA4rzPanVzv5Yloh8A2YXm2-hxgOUWMxl8Y89FH0J5ZlnZvrX5oqJa9HhrAK79SVqZSO93xpQvMe34MSyuokfAouy2UDvXcKB_16225imiCxOBkTWdmIhQ_x4CyUHkb7FuHzBWTZrHAVGpi-yKQKm_PApykCykoFKrLvLN_3CvhkUY574DZdAKR75CWstXLDzLKFSnwjOSKBK4AfjYz1GhSV4OOwTDHXts"/>
+    <div class="absolute inset-0 hero-gradient"></div>
+  </div>
+  <div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container mb-6">
+        <span class="material-symbols-outlined text-[18px]">verified</span>
+        <span class="font-label-sm text-label-sm uppercase tracking-wider">Expertise in Hoogbegaafdheid</span>
+      </div>
+      <h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-white mb-6 leading-tight">
+        Ontketen potentieel, <br/><span class="text-primary-fixed">herstel balans.</span>
+      </h1>
+      <p class="font-body-lg text-body-lg text-surface-variant mb-10 max-w-xl opacity-90">
+        Elk kind verdient het om begrepen en gezien te worden. Wij helpen hoogbegaafde kinderen groeien — en geven ouders, scholen en sportverenigingen de tools om dit mogelijk te maken.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/voor-ouders" class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-body-md font-bold flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-transform shadow-lg shadow-secondary/20">
+          Start Jouw Traject
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="/over-ons" class="border-2 border-primary-fixed text-primary-fixed px-8 py-4 rounded-lg font-body-md font-bold hover:bg-primary-fixed/10 transition-colors text-center">
+          Bekijk Diensten
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-50 text-white">
+    <span class="font-label-sm text-label-sm">ONTDEK MEER</span>
+    <span class="material-symbols-outlined animate-bounce">expand_more</span>
+  </div>
+</section>
+
+<!-- Target Groups / Entry Points -->
+<section class="py-24 bg-surface-bright relative">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div class="max-w-2xl">
+        <h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Maatwerk voor elke context</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">We begrijpen dat de uitdagingen rondom hoogbegaafdheid en talentontwikkeling verschillen per omgeving. Kies uw vertrekpunt.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <!-- Ouders (Mental Peace) -->
+      <div class="group relative bg-white p-8 rounded-xl border border-outline-variant hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full transform hover:-translate-y-2">
+        <div class="mb-8 w-16 h-16 rounded-lg bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+          <span class="material-symbols-outlined text-[32px]">family_restroom</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-background mb-4">Ouders</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+          Creëer <span class="text-primary font-bold">Mental Peace</span> binnen het gezin. Wij bieden de inzichten en tools om uw kind weer met plezier te laten leren en leven.
+        </p>
+        <div class="pt-6 border-t border-outline-variant flex items-center justify-between">
+          <span class="font-label-md text-label-md text-primary font-bold">ONTDEK MEER</span>
+          <span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">trending_flat</span>
+        </div>
+        <a aria-label="Meer voor ouders" class="absolute inset-0 z-10" href="/voor-ouders"></a>
+      </div>
+      <!-- Scholen (Controle) -->
+      <div class="group relative bg-white p-8 rounded-xl border border-outline-variant hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full transform hover:-translate-y-2">
+        <div class="mb-8 w-16 h-16 rounded-lg bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+          <span class="material-symbols-outlined text-[32px]">school</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-background mb-4">Scholen</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+          Krijg de <span class="text-primary font-bold">Controle</span> terug over passend onderwijs. Strategische ondersteuning voor leerkrachten en IB-ers.
+        </p>
+        <div class="pt-6 border-t border-outline-variant flex items-center justify-between">
+          <span class="font-label-md text-label-md text-primary font-bold">BEKIJK STRATEGIE</span>
+          <span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">trending_flat</span>
+        </div>
+        <a aria-label="Meer voor scholen" class="absolute inset-0 z-10" href="/voor-scholen"></a>
+      </div>
+      <!-- Sportverenigingen (Status) -->
+      <div class="group relative bg-white p-8 rounded-xl border border-outline-variant hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full transform hover:-translate-y-2">
+        <div class="mb-8 w-16 h-16 rounded-lg bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+          <span class="material-symbols-outlined text-[32px]">sports_score</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-background mb-4">Sportverenigingen</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+          Verhoog de <span class="text-primary font-bold">Status</span> van uw jeugdopleiding. Innovatieve coachingtechnieken voor cognitief getalenteerde atleten.
+        </p>
+        <div class="pt-6 border-t border-outline-variant flex items-center justify-between">
+          <span class="font-label-md text-label-md text-primary font-bold">VOOR VERENIGINGEN</span>
+          <span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">trending_flat</span>
+        </div>
+        <a aria-label="Meer voor sportverenigingen" class="absolute inset-0 z-10" href="/voor-sportverenigingen"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats / Proof Section -->
+<section class="py-20 bg-on-background text-white overflow-hidden relative">
+  <div class="absolute top-0 right-0 opacity-10">
+    <span class="material-symbols-outlined" style="font-size: 400px;">bolt</span>
+  </div>
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+      <div>
+        <div class="font-display-lg text-headline-lg text-primary-fixed mb-2">15+</div>
+        <div class="font-label-md text-label-md uppercase tracking-widest text-surface-variant">Jaar Ervaring</div>
+      </div>
+      <div>
+        <div class="font-display-lg text-headline-lg text-primary-fixed mb-2">500+</div>
+        <div class="font-label-md text-label-md uppercase tracking-widest text-surface-variant">Gezinnen Begeleid</div>
+      </div>
+      <div>
+        <div class="font-display-lg text-headline-lg text-primary-fixed mb-2">40+</div>
+        <div class="font-label-md text-label-md uppercase tracking-widest text-surface-variant">Partner Scholen</div>
+      </div>
+      <div>
+        <div class="font-display-lg text-headline-lg text-primary-fixed mb-2">100%</div>
+        <div class="font-label-md text-label-md uppercase tracking-widest text-surface-variant">Maatwerk</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Content Split Section (Bento Lite) -->
+<section class="py-24">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+      <div class="lg:col-span-5">
+        <h2 class="font-headline-lg text-headline-lg text-on-background mb-6 leading-tight">Expertise die verder gaat dan de standaard.</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+          Talent2Empower combineert diepgaande psychologische kennis met jarenlange praktijkervaring in onderwijs en sport. Wij kijken niet alleen naar wat er aan de oppervlakte zichtbaar is, maar naar de drijfveren en de context van het talent.
+        </p>
+        <ul class="space-y-4 mb-10">
+          <li class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">check_circle</span>
+            <span class="font-body-md text-body-md font-medium">Wetenschappelijk onderbouwde methodieken</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">check_circle</span>
+            <span class="font-body-md text-body-md font-medium">Focus op duurzame gedragsverandering</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">check_circle</span>
+            <span class="font-body-md text-body-md font-medium">Holistische benadering van talent</span>
+          </li>
+        </ul>
+        <a href="/over-ons" class="text-primary font-bold font-body-md flex items-center gap-2 group">
+          Lees meer over onze visie
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+        </a>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+        <div class="space-y-4">
+          <div class="h-64 rounded-xl overflow-hidden shadow-lg">
+            <img class="w-full h-full object-cover" alt="Expert begeleiding tijdens een coachingsessie" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClgXiBPb31JbBOLlFl14YT2lRP04Jj2FemcEfH7GE4geKclk8EC7gb92VsWX6JNOm4v9MtSMIzwX-OOy6Fp4G901Elf9VeJU2nSaJtKxcSLmRCoVB03TIB-IjBai9Wiptk_VdYVmZOTtwbDu23b6AwBIyRVNsfKluuW2fr_1N00OT8taRnwU0foDwQnQGC2iTwYh-e3UH5i08yCttyG5eNF8QH798HZz2Vfk3AYaGSu9Y9f4_zvJmek-cztE2zZb1MjQQ7s-IR7xw"/>
+          </div>
+          <div class="p-6 bg-surface-container-high rounded-xl">
+            <h4 class="font-headline-md text-headline-md text-primary mb-2">Focus</h4>
+            <p class="font-body-md text-body-md opacity-80">Wij brengen de focus terug op wat echt belangrijk is: het kind in zijn kracht zetten.</p>
+          </div>
+        </div>
+        <div class="space-y-4 pt-12">
+          <div class="p-6 bg-primary text-white rounded-xl shadow-xl shadow-primary/20">
+            <span class="material-symbols-outlined text-4xl mb-4">psychology</span>
+            <h4 class="font-headline-md text-headline-md mb-2">Inzicht</h4>
+            <p class="font-body-md text-body-md text-white/90">Begrip is de eerste stap naar verandering en groei.</p>
+          </div>
+          <div class="h-64 rounded-xl overflow-hidden shadow-lg">
+            <img class="w-full h-full object-cover" alt="Strategische planning in samenwerking" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyGlMwfeoWC57PsfkLk4OIaFgalcc-PvzuzUFx8PubFTUqypaZoJC_d41lePYXszNkc8WmQtsf1Ubh2ADY-j61jwmwyMKEl_dIU21r8DsW-NHafsMEf9IKm15o72jtlsbpThKCJo0nTVdiKM4fmTgVK_3Fdl7Ck0aVtj7tI5z-eQfb8ERnxhRFAYFeEQLsf1qCNY2xC_W3wflkDf-mLUt9Ag1tbQ0DLMtsBt3LJEJ5XmJZ59XOdMPgeCLlFXmFnQkGyUOP4mMAT4o"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-headline-lg text-headline-lg text-on-background mb-8">Klaar om de volgende stap te zetten?</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-12">Of u nu een ouder bent die balans zoekt, een school die expertise nodig heeft of een vereniging die wil excelleren: wij staan voor u klaar.</p>
+      <div class="inline-flex flex-col sm:flex-row gap-6 p-2 bg-white rounded-2xl shadow-xl border border-outline-variant">
+        <a class="bg-secondary text-on-secondary px-10 py-5 rounded-xl font-body-md font-bold hover:scale-[1.02] transition-transform text-center" href="mailto:info@talent2empower.nl">Plan een kennismaking</a>
+        <a class="flex items-center justify-center gap-3 px-10 py-5 text-on-surface font-bold hover:text-primary transition-colors" href="tel:+31000000000">
+          <span class="material-symbols-outlined">call</span>
+          Bel direct
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Intersection Observer for fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section > div').forEach(el => {
+    el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+    observer.observe(el);
+  });
+</script>
+
+</BaseLayout>

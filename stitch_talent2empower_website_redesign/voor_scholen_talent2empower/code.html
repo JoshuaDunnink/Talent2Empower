@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talent2Empower | Scholen - Krijg de regie terug</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#b9cac4",
+                        "surface-container-low": "#f2f3ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#7316ff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#e2d3ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb59a",
+                        "on-background": "#131b2e",
+                        "surface-container-high": "#e2e7ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-secondary-fixed-variant": "#802a00",
+                        "surface-tint": "#006b5b",
+                        "primary-fixed": "#26fedc",
+                        "background": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#e9ddff",
+                        "primary-fixed-dim": "#00dfc1",
+                        "on-primary-fixed-variant": "#005144",
+                        "inverse-surface": "#283044",
+                        "on-tertiary-fixed": "#23005b",
+                        "secondary-container": "#cd4800",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#dae2fd",
+                        "surface-dim": "#d2d9f4",
+                        "on-surface-variant": "#3a4a46",
+                        "surface-container-highest": "#dae2fd",
+                        "primary-container": "#00f5d4",
+                        "on-primary-container": "#006c5c",
+                        "tertiary": "#7212ff",
+                        "primary": "#006b5b",
+                        "inverse-on-surface": "#eef0ff",
+                        "inverse-primary": "#00dfc1",
+                        "secondary-fixed": "#ffdbce",
+                        "on-secondary-fixed": "#370e00",
+                        "on-surface": "#131b2e",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-primary-fixed": "#00201a",
+                        "secondary": "#a33800",
+                        "outline": "#6a7b76",
+                        "surface-container": "#eaedff",
+                        "on-tertiary-fixed-variant": "#5700c9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Epilogue"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Epilogue"],
+                        "display-lg": ["Epilogue"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Epilogue"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-energy-gradient {
+            background: linear-gradient(135deg, rgba(0, 107, 91, 0.05) 0%, rgba(163, 56, 0, 0.05) 100%);
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 107, 91, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">Talent2Empower</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Ouders</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Scholen</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Sportverenigingen</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Over Ons</a>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2.5 rounded-full font-body-md font-bold hover:opacity-80 transition-all">
+                Contact
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="High performance classroom environment" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXr6gL6L4cUjmME80XBMFsqU_JfExDBrQKmrpKdg-f9u4DBKlPiCePNZ1qoFxOLw-qgGqgYphaiq3CC42oFsQHLyfIpgrgWNiO47e454zIwyxSXV5-Hq_DIocPB6Tl2d-816vDK2ZbWdgqzcqU8WGVzcZaKm8YzowhxDfSUMxqlfZnXICkn1yq9q5fD_CXC-At-WklW5Q63OkAnYvQx2qF3n8Llctb9rJa-jGxGmVzv-AAFjrCHVkMHPlW3L8waK4pTZuzY6DcY-I"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-bright via-surface-bright/80 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto">
+<div class="max-w-2xl">
+<span class="inline-block font-label-sm text-label-sm bg-primary-container text-on-primary-container px-3 py-1 rounded mb-6">VOOR ONDERWIJSPROFESSIONALS</span>
+<h1 class="font-headline-lg text-headline-lg md:text-display-lg md:leading-[1.1] text-on-background mb-6">
+                        Krijg de regie terug over de groei van <span class="text-primary italic">hoogbegaafde</span> leerlingen.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">
+                        Structurele ondersteuning en cognitieve ontwikkeling voor scholen die streven naar maximale talentontplooiing zonder de grip op het klasproces te verliezen.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-body-md font-bold shadow-lg hover:shadow-xl transition-all">
+                            Ontdek CoFun Programma
+                        </button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-body-md font-bold hover:bg-primary/5 transition-all">
+                            Maak een afspraak
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Proposition / Bento Grid -->
+<section class="py-24 bg-surface px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Controle door Inzicht &amp; Structuur</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Wij bieden scholen de tools om meer- en hoogbegaafde leerlingen niet alleen te 'bezig te houden', maar ze daadwerkelijk te laten groeien middels wetenschappelijke kaders.</p>
+</div>
+<div class="font-label-md text-label-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                        WETENSCHAPPELIJK ONDERBOUWD
+                    </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Feature 1: CoFun -->
+<div class="md:col-span-8 bg-surface-container-low p-10 rounded-xl bento-card border border-outline-variant flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-primary flex items-center justify-center rounded-lg mb-6">
+<span class="material-symbols-outlined text-white">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-background">CoFun: Focus op Cognitieve Functies</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">Ons paradepaardje. Een gestructureerd programma dat zich richt op de executieve en cognitieve functies die vaak onderontwikkeld blijven bij snelle denkers.</p>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/30 grid grid-cols-2 md:grid-cols-3 gap-6">
+<div>
+<div class="font-label-md text-primary mb-1">STAP 01</div>
+<div class="font-body-md font-bold">Diagnostiek</div>
+</div>
+<div>
+<div class="font-label-md text-primary mb-1">STAP 02</div>
+<div class="font-body-md font-bold">Interventie</div>
+</div>
+<div>
+<div class="font-label-md text-primary mb-1">STAP 03</div>
+<div class="font-body-md font-bold">Monitoring</div>
+</div>
+</div>
+</div>
+<!-- Feature 2: Professionalization -->
+<div class="md:col-span-4 bg-on-background text-surface-bright p-10 rounded-xl bento-card flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-secondary flex items-center justify-center rounded-lg mb-6">
+<span class="material-symbols-outlined text-white">school</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 leading-tight">Professionalisering van Leerkrachten</h3>
+<p class="font-body-md text-body-md text-surface-variant">Trainingen en workshops die direct toepasbaar zijn in de drukke dagelijkse praktijk.</p>
+</div>
+<ul class="space-y-3 mt-8">
+<li class="flex items-center gap-3 font-label-sm">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                SIGNALEERVAARDIGHEDEN
+                            </li>
+<li class="flex items-center gap-3 font-label-sm">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                COMPACTEN &amp; VERRIJKEN
+                            </li>
+<li class="flex items-center gap-3 font-label-sm">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                FEEDBACK-MECHANISMEN
+                            </li>
+</ul>
+</div>
+<!-- Feature 3: Practical Tools -->
+<div class="md:col-span-4 bg-surface-container-high p-8 rounded-xl bento-card border border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-4" style="font-size: 32px;">construction</span>
+<h4 class="font-headline-md text-headline-md mb-3">Praktische Tools</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Geen vage rapporten, maar tastbare materialen die morgen in de klas kunnen worden ingezet.</p>
+</div>
+<!-- Feature 4: Scientific Basis -->
+<div class="md:col-span-8 relative overflow-hidden bg-white p-8 rounded-xl bento-card border border-outline-variant flex items-center">
+<div class="relative z-10 md:w-3/5">
+<h4 class="font-headline-md text-headline-md mb-3">Wetenschappelijk Fundament</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Onze methodiek rust op de pijlers van cognitieve psychologie en moderne neurobiologische inzichten over het hoogbegaafde brein.</p>
+</div>
+<div class="absolute right-0 top-0 h-full w-1/3 bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-size: 80px; opacity: 0.2;">science</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Section: The Program -->
+<section class="py-24 bg-on-background text-surface-bright relative overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[100px] rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 blur-[100px] rounded-full -ml-48 -mb-48"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<img alt="Teacher mentoring a student" class="rounded-2xl shadow-2xl grayscale transition-all duration-700 hover:grayscale-0" data-alt="A focused close-up photo of a professional teacher in a modern workspace environment guiding a young student. The lighting is crisp and academic, emphasizing clarity and focus. The aesthetic is professional and clean, using high contrast between dark background elements and bright foreground subjects. The mood is supportive and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5W49lHLOENoa6e20KtWrLBuIMKmmSqEG-JeR5Z71_eslj_Ngvk7LtYx9Fuy-cdq4BurHYZqB1-O6VU58F5r1m-msLN19s6IYDOguul7Eypv3xLn_VntUhIu-99dWhXvxPL5rs_H6nu_MxGACdo-lw1GwgHrRlNkCXXFuwgZ_C0FRjf-LVMbImhBod9HTuQc_n1CJgVgk0gD9Md4mkiUtnU66sDTyDDD3ruftUZab9BYOc572yLassr7YlbFYU0OxkZcTc8xD1crw"/>
+<div class="absolute -bottom-6 -right-6 bg-secondary p-8 rounded-xl hidden md:block">
+<div class="text-4xl font-bold mb-2">94%</div>
+<div class="text-xs font-label-sm uppercase tracking-wider opacity-80">Effectiviteit Score</div>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">Gestructureerde steun waar het telt.</h2>
+<div class="space-y-10">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center font-label-md text-primary">01</div>
+<div>
+<h5 class="font-headline-md text-headline-md text-body-lg mb-2">Analyse van de huidige aanpak</h5>
+<p class="text-surface-variant font-body-md">We kijken samen naar wat er al staat en waar de blinde vlekken zitten in de signalering en begeleiding.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center font-label-md text-primary">02</div>
+<div>
+<h5 class="font-headline-md text-headline-md text-body-lg mb-2">Implementatie van CoFun</h5>
+<p class="text-surface-variant font-body-md">Onze specialisten begeleiden het team bij het inbedden van het programma in het dagelijkse rooster.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center font-label-md text-primary">03</div>
+<div>
+<h5 class="font-headline-md text-headline-md text-body-lg mb-2">Duurzame Borging</h5>
+<p class="text-surface-variant font-body-md">Geen eenmalige training, maar doorlopende intervisie om de kwaliteit en de grip te garanderen.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-surface px-margin-desktop">
+<div class="max-w-container-max mx-auto bg-primary text-white rounded-3xl p-12 md:p-20 relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg mb-6">Klaar om de regie in de klas te herpakken?</h2>
+<p class="text-lg opacity-90 mb-0">Neem vandaag nog contact op voor een vrijblijvend adviesgesprek over de mogelijkheden voor uw school.</p>
+</div>
+<div class="flex flex-col gap-4 w-full md:w-auto">
+<button class="bg-secondary text-white px-10 py-5 rounded-xl font-bold hover:scale-105 transition-transform">
+                            Vraag Brochure Aan
+                        </button>
+<button class="bg-white/10 backdrop-blur-sm border border-white/20 px-10 py-5 rounded-xl font-bold hover:bg-white/20 transition-all text-center">
+                            Praat met een Expert
+                        </button>
+</div>
+</div>
+<!-- Abstract graphic element -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-container rounded-full opacity-20 blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-6">Talent2Empower</div>
+<p class="font-body-md text-on-surface-variant pr-4">Structurele begeleiding voor talentontwikkeling in het onderwijs.</p>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6">NAAVIGATIE</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Scholen</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Ouders</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Over Ons</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6">RECHTSGELDIG</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Algemene Voorwaarden</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6">SOCIALS</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">LinkedIn</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="px-margin-desktop py-6 border-t border-outline-variant/30 text-center font-body-md text-on-surface-variant opacity-70">
+            © 2024 Talent2Empower. Alle rechten voorbehouden.
+        </div>
+</footer>
+<script>
+        // Subtle scroll reveal effect
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

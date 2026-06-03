@@ -1,0 +1,131 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  description: string;
+  primaryCTA?: {
+    text: string;
+    href: string;
+  };
+  secondaryCTA?: {
+    text: string;
+    href: string;
+  };
+  imageUrl?: string;
+}
+
+const { title, subtitle, description, primaryCTA, secondaryCTA, imageUrl } = Astro.props;
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+        <h1 class="hero-title">{title}</h1>
+        <p class="hero-description">{description}</p>
+        
+        {(primaryCTA || secondaryCTA) && (
+          <div class="hero-actions">
+            {primaryCTA && (
+              <a href={primaryCTA.href} class="button button-primary">
+                {primaryCTA.text}
+              </a>
+            )}
+            {secondaryCTA && (
+              <a href={secondaryCTA.href} class="button button-outline">
+                {secondaryCTA.text}
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+      
+      {imageUrl && (
+        <div class="hero-image">
+          <img src={imageUrl} alt={title} />
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(
+      135deg,
+      var(--color-surface-container-low) 0%,
+      var(--color-surface-bright) 100%
+    );
+    padding: var(--space-20) 0;
+  }
+  
+  @media (min-width: 768px) {
+    .hero {
+      padding: var(--space-24) 0;
+    }
+  }
+  
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+  
+  @media (min-width: 768px) {
+    .hero-content {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+    }
+  }
+  
+  .hero-subtitle {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-label-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+  
+  .hero-title {
+    margin-bottom: var(--space-6);
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-tertiary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-description {
+    font-size: var(--font-size-body-lg);
+    line-height: var(--line-height-body-lg);
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--space-8);
+    max-width: 600px;
+  }
+  
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+  
+  .hero-image {
+    position: relative;
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>

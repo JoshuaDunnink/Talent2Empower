@@ -1,0 +1,23 @@
+{
+    "name": "talent2empower-website",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Talent2Empower - Website voor ouders, scholen en sportverenigingen.",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "lint": "prettier --check .",
+        "format": "prettier --write ."
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.3.0",
+        "astro": "^5.5.0",
+        "tailwindcss": "^4.3.0"
+    },
+    "devDependencies": {
+        "prettier": "^3.5.0",
+        "prettier-plugin-astro": "^0.14.0"
+    }
+}
