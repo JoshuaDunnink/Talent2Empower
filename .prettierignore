@@ -1,0 +1,11 @@
+# generated files
+src/styles/theme.css
+src/data/fotografie-manifest.json
+scripts/image-map.json
+public/fotografie/
+dist/
+.photos-src/
+.astro/
+
+# stitch design prototypes (reference only)
+stitch_talent2empower_website_redesign/

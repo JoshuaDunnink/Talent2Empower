@@ -1,23 +1,31 @@
 {
-    "name": "talent2empower-website",
-    "type": "module",
-    "version": "1.0.0",
-    "description": "Talent2Empower - Website voor ouders, scholen en sportverenigingen.",
-    "scripts": {
-        "dev": "astro dev",
-        "build": "astro build",
-        "preview": "astro preview",
-        "astro": "astro",
-        "lint": "prettier --check .",
-        "format": "prettier --write ."
-    },
-    "dependencies": {
-        "@tailwindcss/vite": "^4.3.0",
-        "astro": "^5.5.0",
-        "tailwindcss": "^4.3.0"
-    },
-    "devDependencies": {
-        "prettier": "^3.5.0",
-        "prettier-plugin-astro": "^0.14.0"
-    }
+  "name": "talent2empower-website",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Talent2Empower - Website voor ouders, scholen en sportverenigingen.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "theme": "node compile_theme.js",
+    "photos:fetch": "rclone sync gdrive-t2e: .photos-src --include \"*.{jpg,jpeg,png,JPG,JPEG,heic,HEIC,nef,NEF,cr2,CR2,arw,ARW,dng,DNG}\" -P",
+    "photos:build": "node scripts/build-photos.mjs",
+    "photos": "npm run photos:fetch && npm run photos:build",
+    "deploy": "node scripts/deploy.mjs",
+    "release": "npm run build && npm run deploy",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^5.5.0",
+    "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "sharp": "^0.35.3"
+  }
 }

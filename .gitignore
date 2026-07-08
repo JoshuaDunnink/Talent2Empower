@@ -1,19 +1,12 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
-# testing
-/coverage
+# astro build output
+/dist/
+.astro/
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
+# fotografie pipeline: raw Drive originals (never commit full-res photos)
+/.photos-src/
 
 # misc
 .DS_Store
@@ -21,16 +14,7 @@
 
 # debug
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # local env files
 .env*.local
 .env
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts

@@ -1,40 +1,87 @@
 ---
-const currentPath = Astro.url.pathname.replace(/\/$/, "");
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
 
 const navItems = [
   { href: '/over-ons', label: 'Over Ons' },
   { href: '/voor-ouders', label: 'Ouders' },
   { href: '/voor-scholen', label: 'Scholen' },
   { href: '/voor-sportverenigingen', label: 'Sportverenigingen' },
+  { href: '/watersport', label: 'Watersport' },
+  { href: '/turn-fotografie', label: 'Fotografie' },
+  { href: '/cofun', label: 'CoFun' },
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md transition-all duration-300 border-b border-outline-variant/10">
-  <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md transition-all duration-300 border-b border-outline-variant/10"
+>
+  <div
+    class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto"
+  >
     <a class="font-headline-md text-2xl font-bold text-primary" href="/">Talent2Empower</a>
-    <nav class="hidden md:flex items-center gap-8">
-      {navItems.map((item) => (
-        <a 
-          href={item.href || "/"} 
-          class:list={[
-            "font-body text-base transition-all",
-            currentPath === item.href
-              ? "text-primary font-bold border-b-2 border-primary pb-1" 
-              : "text-on-surface-variant hover:text-primary"
-          ]}
-        >
-          {item.label}
-        </a>
-      ))}
+    <nav class="hidden lg:flex items-center gap-6">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href || '/'}
+            class:list={[
+              'font-body text-sm transition-all',
+              currentPath === item.href
+                ? 'text-primary font-bold border-b-2 border-primary pb-1'
+                : 'text-on-surface-variant hover:text-primary',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
     </nav>
     <div class="flex items-center gap-4">
-      <a href="/contact" class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-body font-bold hover:bg-secondary-container transition-all active:opacity-80">
+      <a
+        href="/contact"
+        class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-body font-bold hover:bg-secondary-container transition-all active:opacity-80"
+      >
         Contact
       </a>
-      <button class="md:hidden text-primary" id="mobile-menu-button">
+      <button
+        class="lg:hidden text-primary"
+        id="mobile-menu-button"
+        aria-label="Menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
         <span class="material-symbols-outlined text-[32px]">menu</span>
       </button>
     </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden absolute top-full inset-x-0 bg-surface-container-lowest border-b border-outline-variant shadow-lg"
+  >
+    <nav class="flex flex-col px-margin-mobile py-4">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href || '/'}
+            class:list={[
+              'font-body py-3 border-b border-outline-variant/20 last:border-0',
+              currentPath === item.href
+                ? 'text-primary font-bold'
+                : 'text-on-surface-variant hover:text-primary',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a
+        href="/contact"
+        class="mt-4 bg-secondary text-on-secondary text-center px-6 py-3 rounded-lg font-body font-bold hover:bg-secondary-container transition-all"
+      >
+        Contact
+      </a>
+    </nav>
   </div>
 </header>
 
@@ -49,35 +96,21 @@ const navItems = [
       header?.classList.add('py-4');
     }
   });
-</script>
 
-<style>
-  @media (max-width: 768px) {
-    .nav-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      background-color: var(--color-surface-container-lowest);
-      border-bottom: 1px solid var(--color-outline-variant);
-      padding: var(--space-4);
-      gap: var(--space-4);
-      display: none;
-    }
-    
-    .nav-menu.active {
-      display: flex;
-    }
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = menuButton?.querySelector('.material-symbols-outlined');
+
+  function setMenu(open: boolean) {
+    mobileMenu?.classList.toggle('hidden', !open);
+    menuButton?.setAttribute('aria-expanded', String(open));
+    if (menuIcon) menuIcon.textContent = open ? 'close' : 'menu';
   }
-</style>
 
-
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  
-  menuToggle?.addEventListener('click', () => {
-    navMenu?.classList.toggle('active');
+  menuButton?.addEventListener('click', () => {
+    setMenu(mobileMenu?.classList.contains('hidden') ?? false);
+  });
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenu(false));
   });
 </script>

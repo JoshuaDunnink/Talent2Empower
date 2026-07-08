@@ -6,11 +6,14 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  /** Extra class on <body>, e.g. "theme-dark" for the fotografie/watersport sub-brand */
+  theme?: string;
 }
 
 const {
   title,
   description = 'Talent2Empower - Ondersteuning voor ouders, scholen en sportverenigingen.',
+  theme,
 } = Astro.props;
 ---
 
@@ -22,10 +25,16 @@ const {
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <slot name="head" />
     <title>{title} | Talent2Empower</title>
   </head>
-  <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+  <body class:list={['bg-surface text-on-surface font-body-md overflow-x-hidden', theme]}>
     <Header />
     <main id="main-content">
       <slot />

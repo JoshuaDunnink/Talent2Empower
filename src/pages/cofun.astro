@@ -1,0 +1,436 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../assets/images/hero-start.jpg';
+import peergroepenImg from '../assets/images/section-peergroepen.jpg';
+import begeleidingImg from '../assets/images/section-begeleiding.jpg';
+import organisatieImg from '../assets/images/section-organisatie.jpg';
+import klasImg from '../assets/images/section-voor-wie.jpg';
+import rustImg from '../assets/images/hero-stop.jpg';
+import overOnsImg from '../assets/images/section-over-ons.jpg';
+---
+
+<BaseLayout
+  title="CoFun - Spelend beter leren"
+  description="CoFun is hét lespakket om de executieve functies van kinderen te ontwikkelen. Talent2Empower geeft scholen de controle terug over de ontwikkeling van hoogbegaafde leerlingen."
+>
+  <!-- Hero Section -->
+  <section
+    class="relative min-h-[90vh] flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop bg-surface-cream pt-24"
+  >
+    <div class="max-w-container-max mx-auto grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-6 z-10 space-y-stack-md">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 bg-primary-fixed rounded-full text-on-primary-fixed-variant font-label-md"
+        >
+          <span
+            class="material-symbols-outlined text-[18px]"
+            style="font-variation-settings: 'FILL' 1;">colors_spark</span
+          >
+          Samen naar de volgende stap
+        </div>
+        <h1
+          class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight"
+        >
+          Rust voor ouders, <span class="text-primary italic">controle voor scholen</span> en status voor
+          sport.
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+          Talent2Empower biedt specialistische ondersteuning die zorgt voor de doorbraak waar u naar
+          zoekt. Van individuele begeleiding tot innovatieve lespakketten.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a
+            class="px-8 py-4 bg-primary text-on-primary rounded-lg font-label-md shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
+            href="/contact">Plan een kennismaking</a
+          >
+          <a
+            class="px-8 py-4 border-2 border-outline-variant text-on-surface rounded-lg font-label-md hover:bg-white/50 transition-all"
+            href="#wat-wij-doen">Bekijk onze oplossingen</a
+          >
+        </div>
+      </div>
+      <div class="md:col-span-6 relative h-[400px] md:h-[600px]">
+        <div
+          class="absolute inset-0 bg-accent-warm/30 rounded-full scale-125 blur-3xl opacity-30 -z-10"
+        >
+        </div>
+        <Image
+          src={heroImg}
+          alt="Talent2Empower Hero"
+          class="w-full h-full object-contain drop-shadow-2xl"
+          loading="eager"
+        />
+        <div class="absolute bottom-10 -left-10 bg-white p-6 rounded-xl shadow-xl hidden md:block">
+          <div class="flex items-center gap-4">
+            <div
+              class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-on-secondary-container">verified</span>
+            </div>
+            <div>
+              <p class="font-label-md text-on-surface">Bewezen impact</p>
+              <p class="text-caption text-on-surface-variant">Specialistische expertise</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50"
+    >
+      <span class="text-caption font-label-md uppercase tracking-widest">Scroll</span>
+      <span class="material-symbols-outlined animate-bounce">expand_more</span>
+    </div>
+  </section>
+
+  <!-- Wat Wij Doen -->
+  <section
+    class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-white"
+    id="wat-wij-doen"
+  >
+    <div class="max-w-container-max mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-stack-lg reveal">
+        <h2 class="font-headline-md text-headline-md text-on-surface mb-4">Onze Expertise</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          Wij ondersteunen groei op elk niveau met programma's die specifiek zijn ontworpen voor
+          hoogbegaafde kinderen en de organisaties om hen heen.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-gutter">
+        <!-- Peergroepen -->
+        <div
+          class="group bg-surface-cream p-base rounded-xl reveal shadow-sm hover:shadow-xl transition-all duration-300"
+        >
+          <div class="aspect-[1.29] rounded-lg overflow-hidden mb-6">
+            <Image
+              src={peergroepenImg}
+              alt="Peergroepen"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-4 pt-0">
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Peergroepen</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Waar gelijkgestemden samenkomen om uitgedaagd te worden, te leren en eindelijk
+              begrepen te worden.
+            </p>
+            <a
+              href="/voor-ouders"
+              class="flex items-center gap-2 text-primary font-label-md group-hover:gap-4 transition-all"
+            >
+              Ontdek de groepen <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+        <!-- Begeleiding -->
+        <div
+          class="group bg-surface-cream p-base rounded-xl reveal shadow-sm hover:shadow-xl transition-all duration-300"
+          style="transition-delay: 100ms;"
+        >
+          <div class="aspect-[1.29] rounded-lg overflow-hidden mb-6">
+            <Image
+              src={begeleidingImg}
+              alt="Begeleiding"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-4 pt-0">
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Begeleiding</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Maatwerk coaching voor kinderen die meer nodig hebben dan het standaard aanbod om echt
+              te floreren.
+            </p>
+            <a
+              href="/voor-ouders"
+              class="flex items-center gap-2 text-primary font-label-md group-hover:gap-4 transition-all"
+            >
+              Bekijk trajecten <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+        <!-- Organisatiegroei -->
+        <div
+          class="group bg-surface-cream p-base rounded-xl reveal shadow-sm hover:shadow-xl transition-all duration-300"
+          style="transition-delay: 200ms;"
+        >
+          <div class="aspect-[1.29] rounded-lg overflow-hidden mb-6">
+            <Image
+              src={organisatieImg}
+              alt="Organisatiegroei"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-4 pt-0">
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Professionalisering</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Strategische ondersteuning voor scholen en sportverenigingen om hun kwaliteit en
+              aanbod naar een hoger niveau te tillen.
+            </p>
+            <a
+              href="/voor-scholen"
+              class="flex items-center gap-2 text-primary font-label-md group-hover:gap-4 transition-all"
+            >
+              Start groei <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CoFun Section (Featured Product for Schools) -->
+  <section
+    class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-tertiary text-on-tertiary overflow-hidden"
+    id="cofun"
+  >
+    <div class="max-w-container-max mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6 reveal">
+          <div
+            class="inline-block px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg font-label-md uppercase tracking-wider text-xs"
+          >
+            Flagship Product
+          </div>
+          <h2
+            class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg"
+          >
+            Spelend beter leren met <span class="text-tertiary-fixed">CoFun</span>
+          </h2>
+          <p class="font-body-lg text-body-lg opacity-90">
+            CoFun is hét lespakket om de executieve functies van kinderen te ontwikkelen door in te
+            zetten op de cognitieve functies. Wij geven scholen de controle terug over de
+            ontwikkeling van hoogbegaafde leerlingen die vastlopen.
+          </p>
+          <div class="space-y-4 pt-4">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined text-[18px]">psychology</span>
+              </div>
+              <p class="font-body-md">Inzicht in denkprocessen door observatie en reflectie.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined text-[18px]">sports_esports</span>
+              </div>
+              <p class="font-body-md">Spelend leren: Kinderen leren het best door te doen.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined text-[18px]">trending_up</span>
+              </div>
+              <p class="font-body-md">Groei van binnenuit door basisfuncties te versterken.</p>
+            </div>
+          </div>
+          <div class="pt-8">
+            <a
+              class="px-8 py-4 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg font-label-md shadow-xl hover:scale-105 transition-transform inline-block"
+              href="https://www.cofun.nl"
+              target="_blank"
+              rel="noopener">Ontdek CoFun voor uw school</a
+            >
+          </div>
+        </div>
+        <div class="relative reveal" style="transition-delay: 200ms;">
+          <div class="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl -z-10"></div>
+          <Image
+            src={klasImg}
+            alt="CoFun in de klas"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-video md:aspect-auto"
+          />
+          <div
+            class="absolute -bottom-6 -right-6 p-6 bg-surface-white rounded-xl shadow-xl max-w-[200px] hidden lg:block"
+          >
+            <p class="text-primary font-bold text-headline-sm mb-1">Cofun.nl</p>
+            <p class="text-caption text-on-surface-variant">
+              De nieuwe standaard in cognitieve functies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voor Wie Section (Asymmetric Bento) -->
+  <section
+    class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-cream overflow-hidden"
+    id="voor-wie"
+  >
+    <div class="max-w-container-max mx-auto">
+      <div class="grid md:grid-cols-12 gap-gutter">
+        <div class="md:col-span-5 reveal">
+          <div class="sticky top-24 space-y-6">
+            <h2 class="font-headline-md text-headline-md text-on-surface">
+              Onze Waarde Oplossingen
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">
+              Elke doelgroep heeft unieke behoeften. Wij bieden de specifieke tools en begeleiding
+              die echt het verschil maken.
+            </p>
+            <Image
+              src={rustImg}
+              alt="Mentale Rust"
+              class="rounded-2xl shadow-lg w-full aspect-square object-cover"
+            />
+          </div>
+        </div>
+        <div class="md:col-span-7 grid gap-6">
+          <!-- Ouders -->
+          <div class="p-8 bg-white rounded-2xl shadow-sm reveal border-l-4 border-primary">
+            <div class="flex items-start gap-6">
+              <div
+                class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined text-primary">spa</span>
+              </div>
+              <div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">
+                  Mentale rust voor ouders
+                </h3>
+                <p class="text-on-surface-variant mb-4">
+                  U ziet dat uw kind vastloopt en dat raakt u. Wij bieden de verlichting en
+                  expertise die u nodig heeft. Weet dat uw kind in goede handen is bij specialisten
+                  die hen écht zien.
+                </p>
+                <a
+                  class="text-primary font-label-md hover:underline decoration-2"
+                  href="/voor-ouders">Rust voor uw gezin →</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Scholen -->
+          <div
+            class="p-8 bg-white rounded-2xl shadow-sm reveal border-l-4 border-tertiary"
+            style="transition-delay: 100ms;"
+          >
+            <div class="flex items-start gap-6">
+              <div
+                class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined text-tertiary">settings_suggest</span>
+              </div>
+              <div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">
+                  Controle voor scholen
+                </h3>
+                <p class="text-on-surface-variant mb-4">
+                  Krijg de regie terug over de begeleiding van hoogbegaafde leerlingen. Met CoFun
+                  bieden we een wetenschappelijk onderbouwde methodiek om motivatie en groei te
+                  managen.
+                </p>
+                <a class="text-tertiary font-label-md hover:underline decoration-2" href="#cofun"
+                  >Controleer uw groeibeleid →</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Sportverenigingen -->
+          <div
+            class="p-8 bg-white rounded-2xl shadow-sm reveal border-l-4 border-secondary"
+            style="transition-delay: 200ms;"
+          >
+            <div class="flex items-start gap-6">
+              <div
+                class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined text-secondary">military_tech</span>
+              </div>
+              <div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">
+                  Aanzien voor sportverenigingen
+                </h3>
+                <p class="text-on-surface-variant mb-4">
+                  Verhoog de status van uw vereniging door professionalisering. Trek meer leden aan
+                  door een kwalitatief hoogwaardig programma voor talentontwikkeling en betere
+                  prestaties.
+                </p>
+                <a
+                  class="text-secondary font-label-md hover:underline decoration-2"
+                  href="/voor-sportverenigingen">Professionaliseer uw vereniging →</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Over Ons -->
+  <section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-white" id="over-ons">
+    <div class="max-w-container-max mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1 reveal">
+          <Image src={overOnsImg} alt="Over Talent2Empower" class="rounded-3xl shadow-2xl" />
+        </div>
+        <div class="order-1 md:order-2 space-y-6 reveal">
+          <h2 class="font-headline-md text-headline-md text-on-surface">Over Talent2Empower</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">
+            Talent2Empower is geboren uit de overtuiging dat talent altijd gezien moet worden. Wij
+            transformeren uitdagingen in kansen voor zowel het individu als de organisatie.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-6 pt-4">
+            <div class="p-6 bg-surface-cream rounded-xl">
+              <h4 class="font-headline-sm text-primary mb-2">Missie</h4>
+              <p class="text-caption text-on-surface-variant">
+                Het fundament versterken voor duurzame groei en blijvende rust.
+              </p>
+            </div>
+            <div class="p-6 bg-surface-cream rounded-xl">
+              <h4 class="font-headline-sm text-primary mb-2">Visie</h4>
+              <p class="text-caption text-on-surface-variant">
+                Een landschap waarin elke school en sportclub de tools heeft om talent te empoweren.
+              </p>
+            </div>
+          </div>
+          <p
+            class="font-body-md text-on-surface-variant italic border-l-4 border-primary pl-4 py-2"
+          >
+            "Wanneer talent gezien wordt, ontstaat er niet alleen groei, maar ook de mentale ruimte
+            om te excelleren."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-pattern">
+    <div class="max-w-container-max mx-auto">
+      <div
+        class="bg-primary text-on-primary rounded-3xl shadow-2xl p-12 md:p-16 text-center reveal"
+      >
+        <h2 class="font-headline-md text-headline-md mb-4">Zet de eerste stap</h2>
+        <p class="font-body-lg text-body-lg opacity-90 max-w-2xl mx-auto mb-8">
+          Klaar voor meer rust, controle of groei? Laat ons weten hoe we kunnen helpen en we nemen
+          binnen 24 uur contact met u op.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block px-10 py-4 bg-white text-primary rounded-lg font-label-md font-bold shadow-xl hover:scale-105 transition-transform"
+        >
+          Neem contact op
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</BaseLayout>

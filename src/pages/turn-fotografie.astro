@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoCarousel from '../components/PhotoCarousel.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../assets/images/proto-23b61d95.jpg';
+import photos from '../data/fotografie-manifest.json';
+---
+
+<BaseLayout
+  title="Turn Fotografie - The Moment of Excellence"
+  description="Gespecialiseerde gymnastiekfotografie die de precisie, passie en atletiek van elke sprong, draai en landing bevriest in de tijd."
+  theme="theme-dark"
+>
+  <link
+    slot="head"
+    href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Hero Section -->
+  <section
+    class="relative h-[90vh] flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop pt-24"
+  >
+    <div class="absolute inset-0 z-0">
+      <Image
+        src={heroImg}
+        alt="Turnster in actie, vastgelegd met dramatische belichting"
+        class="w-full h-full object-cover opacity-60"
+        loading="eager"
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-surface-dim via-surface-dim/40 to-transparent"
+      >
+      </div>
+    </div>
+    <div class="relative z-10 max-w-4xl reveal">
+      <span
+        class="inline-block px-3 py-1 mb-6 glass-panel text-secondary-fixed-dim font-label-sm text-label-sm uppercase tracking-widest rounded"
+        >The Moment of Excellence</span
+      >
+      <h1 class="font-display-xl text-4xl md:text-display-xl mb-6 leading-tight">
+        DE KRACHT VAN <span class="text-primary italic">BEWEGING</span> VASTGELEGD
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">
+        Gespecialiseerde gymnastiekfotografie die de precisie, passie en atletiek van elke sprong,
+        draai en landing bevriest in de tijd.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="#portfolio"
+          class="bg-primary text-on-primary px-10 py-4 rounded-none font-label-md uppercase tracking-widest hover:bg-primary-container transition-colors"
+        >
+          Bekijk Portfolio
+        </a>
+        <a
+          href="#contact"
+          class="glass-panel text-on-surface px-10 py-4 rounded-none font-label-md uppercase tracking-widest hover:bg-surface-bright/20 transition-colors"
+        >
+          Direct Boeken
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Gallery (Google Drive carousel) -->
+  <section class="py-24 bg-surface-container-lowest" id="portfolio">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="mb-12 reveal">
+        <h2 class="font-headline-xl text-headline-xl mb-4">Portfolio</h2>
+        <p class="text-on-surface-variant">Een selectie van onze meest iconische momenten.</p>
+      </div>
+      {
+        photos.length > 0 ? (
+          <div class="reveal">
+            <PhotoCarousel photos={photos} class="kinetic-hover" />
+            <p class="text-center font-body-md text-on-surface-variant mt-8">
+              Alle foto's zijn voorbeelden met watermerk. Volledige foto's in hoge resolutie zijn
+              <a
+                href="/contact"
+                class="text-primary font-bold underline decoration-2 hover:text-primary-container transition-colors"
+              >
+                beschikbaar op aanvraag
+              </a>
+              .
+            </p>
+          </div>
+        ) : (
+          <p class="glass-panel rounded-xl p-12 text-center text-on-surface-variant reveal">
+            Portfolio wordt binnenkort gevuld. Neem{' '}
+            <a href="/contact" class="text-primary underline">
+              contact
+            </a>{' '}
+            op voor voorbeelden.
+          </p>
+        )
+      }
+    </div>
+  </section>
+
+  <!-- Packages Section (Bento Grid) -->
+  <section class="py-32 bg-surface">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-20 reveal">
+        <h2 class="font-headline-xl text-headline-xl mb-6">Pakketten</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto">
+          Professionele fotografie op maat voor individuele talenten en complete verenigingen.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <!-- Club Package -->
+        <div
+          class="md:col-span-8 glass-panel p-12 rounded-2xl flex flex-col justify-between group kinetic-hover reveal"
+        >
+          <div>
+            <div class="flex justify-between items-start mb-8">
+              <span class="material-symbols-outlined text-4xl text-primary">groups</span>
+              <span class="text-secondary-fixed-dim font-label-md">MEEST GEKOZEN</span>
+            </div>
+            <h3 class="font-headline-lg text-headline-lg mb-4">Verenigingsdag</h3>
+            <p class="text-on-surface-variant mb-8 max-w-md">
+              Complete fotosessie voor alle teams en individuele leden. Inclusief groepsfoto's en
+              actieopnames tijdens de training of wedstrijd.
+            </p>
+            <ul class="space-y-4 mb-12">
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Alle
+                teams &amp; individuele portretten
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Online
+                bestelsysteem voor ouders
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Marketingmateriaal
+                voor de club
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/contact"
+            class="w-fit border-b border-primary text-primary pb-1 font-label-md hover:text-secondary transition-colors"
+            >INFORMATIE AANVRAGEN</a
+          >
+        </div>
+        <!-- Individual Package -->
+        <div
+          class="md:col-span-4 bg-primary text-on-primary p-12 rounded-2xl flex flex-col justify-between kinetic-hover reveal"
+        >
+          <div>
+            <span class="material-symbols-outlined text-4xl mb-8">person</span>
+            <h3 class="font-headline-lg text-headline-lg mb-4">Atleet Focus</h3>
+            <p class="text-on-primary/80 mb-8">
+              Een exclusieve 1-op-1 sessie om jouw persoonlijke vooruitgang en perfecte vorm vast te
+              leggen.
+            </p>
+            <ul class="space-y-4 mb-12">
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-sm">check_circle</span> 90 minuten shoot
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-sm">check_circle</span> 15 bewerkte HD foto's
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-sm">check_circle</span> Social media kit
+              </li>
+            </ul>
+          </div>
+          <a
+            href="/contact"
+            class="bg-on-primary text-primary w-full py-4 text-center font-label-md uppercase tracking-widest hover:brightness-110 transition-all"
+            >BOEK NU</a
+          >
+        </div>
+        <!-- Event Package -->
+        <div
+          class="md:col-span-12 glass-panel p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8 reveal"
+        >
+          <div class="flex items-center gap-6">
+            <div
+              class="w-16 h-16 rounded-full bg-secondary-container/20 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-secondary-fixed-dim">event</span>
+            </div>
+            <div>
+              <h4 class="font-headline-lg text-headline-lg text-on-surface">
+                Wedstrijd Verslaglegging
+              </h4>
+              <p class="text-on-surface-variant">
+                Live actiefotografie tijdens toernooien en kampioenschappen.
+              </p>
+            </div>
+          </div>
+          <a
+            href="/contact"
+            class="px-8 py-3 glass-panel border-primary/40 hover:bg-primary/10 transition-colors rounded-full font-label-md"
+            >PLAN EEN EVENT</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specs / Exif Style Info -->
+  <section class="py-20 border-y border-outline-variant/10 overflow-hidden">
+    <div
+      class="flex gap-20 animate-marquee whitespace-nowrap text-outline/30 font-label-md uppercase tracking-[0.5em]"
+    >
+      <span>F/2.8 ISOLATION</span>
+      <span>1/1000s MOTION BLUR</span>
+      <span>RAW DYNAMIC RANGE</span>
+      <span>85MM PORTRAITURE</span>
+      <span>CULTURAL PRECISION</span>
+      <span>F/2.8 ISOLATION</span>
+      <span>1/1000s MOTION BLUR</span>
+      <span>RAW DYNAMIC RANGE</span>
+      <span>85MM PORTRAITURE</span>
+      <span>CULTURAL PRECISION</span>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-32" id="contact">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="reveal">
+          <h2 class="font-display-lg text-display-lg mb-8">
+            Laten we dat <span class="text-primary italic">moment</span> pakken.
+          </h2>
+          <p class="text-body-lg text-on-surface-variant mb-12">
+            Heb je vragen over een shoot of wil je een datum vastleggen voor jouw vereniging? Ons
+            team staat klaar om de perfecte visuele strategie te bespreken.
+          </p>
+          <div class="space-y-8">
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-primary">mail</span>
+              <span class="font-label-md">info@talent2empower.nl</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-primary">location_on</span>
+              <span class="font-label-md">Nederland, Diverse locaties</span>
+            </div>
+          </div>
+        </div>
+        <div class="glass-panel p-10 rounded-2xl text-center space-y-6 reveal">
+          <span class="material-symbols-outlined text-primary text-5xl">photo_camera</span>
+          <h3 class="font-headline-lg text-headline-lg">Boek een shoot</h3>
+          <p class="text-on-surface-variant">
+            Stuur ons een bericht via het contactformulier en we nemen binnen 24 uur contact op.
+          </p>
+          <a
+            href="/contact"
+            class="inline-block bg-primary text-on-primary px-10 py-4 rounded-none font-label-md uppercase tracking-widest hover:bg-primary-container transition-colors"
+          >
+            Verstuur Aanvraag
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</BaseLayout>

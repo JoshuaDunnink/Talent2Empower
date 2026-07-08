@@ -1,0 +1,260 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../assets/images/proto-b2c3935b.jpg';
+import programImg from '../assets/images/proto-4eb7ef35.jpg';
+---
+
+<BaseLayout
+  title="Watersport - Experiential Growth"
+  description="Windsurf- en wingfoillessen als katalysator voor veerkracht, focus en persoonlijke groei. Professionele begeleiding met de modernste materialen."
+  theme="theme-dark"
+>
+  <link
+    slot="head"
+    href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Hero Section: Experiential Growth -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+      <Image
+        src={heroImg}
+        alt="Wingfoiler glijdt over het water tijdens zonsondergang"
+        class="w-full h-full object-cover opacity-60"
+        loading="eager"
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"
+      >
+      </div>
+    </div>
+    <div
+      class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full"
+    >
+      <div class="max-w-2xl">
+        <span
+          class="inline-block font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-[0.2em] mb-6 reveal"
+          >Windsurf &amp; Wingfoil Lessen</span
+        >
+        <h1 class="font-display-xl text-[48px] leading-[54px] md:text-display-xl mb-8 reveal">
+          Experiential <br /><span class="text-secondary-fixed-dim">Growth</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg reveal">
+          Ontdek je ware potentieel door de kracht van de elementen. Wij gebruiken windsurfen en
+          wingfoilen als katalysator voor veerkracht, focus en persoonlijke groei.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 reveal">
+          <a
+            href="/contact"
+            class="bg-secondary-fixed-dim text-on-secondary-fixed font-label-md px-8 py-4 rounded-lg flex items-center justify-center gap-2 group overflow-hidden relative"
+          >
+            <span class="relative z-10">Begin Jouw Reis</span>
+            <span
+              class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform"
+              >arrow_forward</span
+            >
+          </a>
+          <a
+            href="#methode"
+            class="glass-panel text-on-surface font-label-md px-8 py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
+          >
+            Onze Methode
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="absolute bottom-10 left-margin-desktop hidden lg:flex items-center gap-12 border-l border-outline-variant/30 pl-8"
+    >
+      <div>
+        <div class="font-display-lg text-[32px] text-primary">100%</div>
+        <div class="font-label-sm text-outline-variant uppercase">Focus &amp; Flow</div>
+      </div>
+      <div>
+        <div class="font-display-lg text-[32px] text-primary">Expert</div>
+        <div class="font-label-sm text-outline-variant uppercase">Begeleiding</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Program: Resilience through Challenge -->
+  <section class="py-24 md:py-32 bg-surface" id="methode">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 order-2 lg:order-1 reveal">
+          <div class="relative rounded-2xl overflow-hidden aspect-[4/5] group">
+            <Image
+              src={programImg}
+              alt="Windsurfer traint techniek en focus"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-secondary-fixed-dim/10 mix-blend-overlay"></div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-8">
+          <div class="space-y-4 reveal">
+            <h2 class="font-headline-xl text-headline-xl">
+              Veerkracht door <span class="text-secondary-fixed-dim">Uitdaging</span>
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">
+              Onze programma's zijn ontworpen om verder te gaan dan alleen de techniek van het
+              varen. We navigeren door de wind om mentale grenzen te verleggen en cognitieve focus
+              te versterken.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              class="glass-panel p-6 rounded-xl hover:border-secondary-fixed-dim/40 transition-colors duration-300 reveal"
+            >
+              <span class="material-symbols-outlined text-secondary-fixed-dim text-3xl mb-4"
+                >waves</span
+              >
+              <h3 class="font-headline-lg text-headline-lg mb-2">Cognitieve Focus</h3>
+              <p class="font-body-md text-on-surface-variant">
+                Het constant anticiperen op wind en water traint je brein in snelle besluitvorming
+                en diepe concentratie.
+              </p>
+            </div>
+            <div
+              class="glass-panel p-6 rounded-xl hover:border-secondary-fixed-dim/40 transition-colors duration-300 reveal"
+            >
+              <span class="material-symbols-outlined text-secondary-fixed-dim text-3xl mb-4"
+                >psychology</span
+              >
+              <h3 class="font-headline-lg text-headline-lg mb-2">Mentale Balans</h3>
+              <p class="font-body-md text-on-surface-variant">
+                Leer vallen, opstaan en rust bewaren in veranderende omstandigheden. Essentieel voor
+                succes in het leven.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety & Expertise (Bento Style) -->
+  <section class="py-24 md:py-32 bg-surface-container-lowest">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="text-center mb-16 reveal">
+        <h2 class="font-display-lg text-headline-xl mb-4">
+          Veiligheid &amp; <span class="text-primary">Expertise</span>
+        </h2>
+        <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Professionele begeleiding met de modernste materialen, zodat jij je volledig kunt richten
+          op je groei.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+        <div
+          class="md:col-span-2 md:row-span-2 glass-panel p-10 rounded-2xl flex flex-col justify-end relative overflow-hidden group reveal"
+        >
+          <div
+            class="absolute top-10 right-10 opacity-10 group-hover:opacity-20 transition-opacity"
+          >
+            <span
+              class="material-symbols-outlined text-[120px] text-primary"
+              style="font-variation-settings: 'FILL' 1;">verified_user</span
+            >
+          </div>
+          <div class="relative z-10">
+            <span class="font-label-sm text-primary uppercase mb-4 block">01 / Certificering</span>
+            <h3 class="font-display-lg text-headline-xl mb-4">Gecertificeerde Instructeurs</h3>
+            <p class="font-body-md text-on-surface-variant max-w-md">
+              Onze coaches zijn experts in zowel de sport als in de psychologische aspecten van
+              leerprocessen.
+            </p>
+          </div>
+        </div>
+        <div class="glass-panel p-8 rounded-2xl hover:bg-surface-bright transition-colors reveal">
+          <span class="material-symbols-outlined text-secondary-fixed-dim mb-4 text-4xl"
+            >inventory</span
+          >
+          <h4 class="font-headline-lg text-headline-lg mb-2">High-End Gear</h4>
+          <p class="font-body-md text-on-surface-variant">
+            Het nieuwste materiaal van topmerken voor maximale controle.
+          </p>
+        </div>
+        <div class="bg-primary p-8 rounded-2xl flex flex-col justify-between reveal">
+          <span class="material-symbols-outlined text-on-primary text-4xl">emergency</span>
+          <div>
+            <h4 class="font-headline-lg text-on-primary-container mb-2">Safety First</h4>
+            <p class="font-body-md text-on-primary-container">
+              Protocol gestuurde veiligheid op en rond het water.
+            </p>
+          </div>
+        </div>
+        <div
+          class="md:col-span-3 glass-panel p-8 rounded-2xl flex items-center justify-between group reveal"
+        >
+          <div class="flex items-center gap-6">
+            <div
+              class="w-16 h-16 rounded-full bg-secondary-fixed-dim/20 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-secondary-fixed-dim">location_on</span>
+            </div>
+            <div>
+              <h4 class="font-headline-lg text-headline-lg">Onze Locaties</h4>
+              <p class="font-body-md text-on-surface-variant">
+                Ontdek de beste spots voor jouw niveau.
+              </p>
+            </div>
+          </div>
+          <span
+            class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform"
+            >east</span
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div
+      class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center"
+    >
+      <div
+        class="glass-panel py-20 px-8 rounded-3xl max-w-4xl mx-auto border-secondary-fixed-dim/20 reveal"
+      >
+        <h2 class="font-display-xl text-[40px] md:text-display-xl mb-8">
+          Klaar om te <span class="text-secondary-fixed-dim">Vliegen?</span>
+        </h2>
+        <p class="font-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">
+          Of je nu een beginner bent of je skills wilt perfectioneren, wij hebben een traject dat
+          bij jouw ambities past.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a
+            href="/contact"
+            class="bg-primary text-on-primary font-label-md px-10 py-5 rounded-lg text-[18px] hover:scale-105 transition-transform"
+          >
+            Boek Je Eerste Les
+          </a>
+          <a
+            href="#methode"
+            class="border border-outline-variant text-on-surface font-label-md px-10 py-5 rounded-lg text-[18px] hover:bg-white/5 transition-colors"
+          >
+            Bekijk Programma's
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</BaseLayout>

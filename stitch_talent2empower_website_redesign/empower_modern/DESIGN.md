@@ -149,23 +149,28 @@ Avoid heavy borders; use subtle tonal shifts in background color to define disti
 
 ## Shapes
 
-The shape language is defined by **Rounded** geometry. The 0.5rem (8px) base radius ensures that components feel approachable and "soft" without appearing juvenile. 
+The shape language is defined by **Rounded** geometry. The 0.5rem (8px) base radius ensures that components feel approachable and "soft" without appearing juvenile.
 
 Buttons and input fields should strictly adhere to the base roundedness. For larger containers like cards or feature sections, use `rounded-xl` (1.5rem) to emphasize the friendly, contemporary aesthetic. Decorative background shapes or illustration containers may use "blob" geometry or full pill shapes to add organic visual interest.
 
 ## Components
 
 ### Buttons
+
 Primary buttons use the Copper Orange (`#E88258`) with white text and a subtle 8px radius. Secondary buttons should use a Forest Teal outline or a ghost style to prevent visual competition.
 
 ### Input Fields
+
 Fields use a white background with a 1px border in a lightened version of the neutral color. Upon focus, the border transitions to the primary orange with a soft glow effect (2px spread).
 
 ### Cards
+
 Cards are the primary container for content. They feature a white background, the standard 16px (rounded-lg) radius, and a soft ambient shadow. Padding within cards should be generous (min 24px).
 
 ### Chips & Tags
+
 Used for categories or skills. These should use a semi-transparent version of the primary or secondary colors (e.g., 10% opacity) with high-contrast text to ensure accessibility while maintaining the warm palette.
 
 ### Progress Indicators
+
 Given the "empowerment" theme, progress bars or steppers should use the secondary Golden Ochre to signify growth and achievement, utilizing rounded caps for all bar elements.

@@ -1,209 +1,318 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import balkImg from '../assets/images/voor-sportverenigingen-1d44c3c7.jpg';
+import ringenImg from '../assets/images/voor-sportverenigingen-517e0344.jpg';
 ---
 
-<BaseLayout title="Sportverenigingen - Professionalisering & Groei" description="Professionaliseer uw aanbod met gestructureerde lesprogramma's en expert coaching. Help uw leden excelleren en transformeer uw club tot een regionaal centrum van topkwaliteit.">
+<BaseLayout
+  title="Sportverenigingen - Professionalisering & Groei"
+  description="Professionaliseer uw aanbod met gestructureerde lesprogramma's en expert coaching. Help uw leden excelleren en transformeer uw club tot een regionaal centrum van topkwaliteit."
+>
+  <!-- Hero Section -->
+  <section class="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+      <Image
+        src={balkImg}
+        alt="Gymnast performing on beam"
+        class="w-full h-full object-cover"
+        loading="eager"
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+      />
+      <div class="absolute inset-0 hero-gradient-sports"></div>
+    </div>
+    <div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto">
+      <div class="max-w-3xl">
+        <span
+          class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm mb-6 uppercase tracking-wider"
+        >
+          Sportverenigingen
+        </span>
+        <h1 class="font-headline-lg text-headline-lg text-on-primary mb-6 leading-tight">
+          Verhoog het <span class="text-primary-fixed">aanzien</span> van uw vereniging door specialistische
+          talentontwikkeling.
+        </h1>
+        <p class="text-surface-variant text-body-lg font-body-lg mb-10 max-w-2xl">
+          Professionaliseer uw aanbod met gestructureerde lesprogramma's en expert coaching. Help uw
+          leden excelleren en transformeer uw club tot een regionaal centrum van topkwaliteit.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button
+            class="bg-secondary text-on-secondary px-10 py-4 rounded-lg font-bold text-body-lg hover:opacity-90 transition-all shadow-lg active:translate-y-1"
+          >
+            Start Professionalisering
+          </button>
+          <button
+            class="border-2 border-primary text-primary-fixed px-10 py-4 rounded-lg font-bold text-body-lg hover:bg-primary hover:text-white transition-all"
+          >
+            Bekijk Programma's
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Dynamic Value Props (Bento Grid Style) -->
+  <section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+      <!-- Lead Card -->
+      <div
+        class="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl border border-outline-variant ambient-shadow flex flex-col justify-between"
+      >
+        <div>
+          <span class="material-symbols-outlined text-primary text-4xl mb-6">workspace_premium</span
+          >
+          <h2 class="font-headline-md text-headline-md mb-4">Focus op Kwaliteit &amp; Groei</h2>
+          <p class="text-on-surface-variant text-body-lg mb-8">
+            Een vereniging groeit wanneer de kwaliteit van het aanbod stijgt. Wij bieden een
+            blauwdruk voor succes die verder gaat dan alleen training; het is een herpositionering
+            van uw clubidentiteit.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="border-l-4 border-primary pl-4">
+            <div class="font-headline-md text-primary">+25%</div>
+            <div class="text-label-sm font-label-sm uppercase">Ledenbehoud</div>
+          </div>
+          <div class="border-l-4 border-secondary pl-4">
+            <div class="font-headline-md text-secondary">Expert</div>
+            <div class="text-label-sm font-label-sm uppercase">Status</div>
+          </div>
+          <div class="border-l-4 border-primary pl-4">
+            <div class="font-headline-md text-primary">100%</div>
+            <div class="text-label-sm font-label-sm uppercase">Focus</div>
+          </div>
+        </div>
+      </div>
+      <!-- Secondary Card -->
+      <div
+        class="md:col-span-4 bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-center items-center text-center overflow-hidden relative"
+      >
+        <div class="absolute top-0 right-0 p-4 opacity-10">
+          <span class="material-symbols-outlined text-[120px]">trending_up</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md mb-4 relative z-10">
+          Klaar voor de volgende stap?
+        </h3>
+        <p class="mb-8 opacity-90 relative z-10">
+          Onze methode helpt trainers naar een hoger niveau te stijgen.
+        </p>
+        <button
+          class="bg-surface-container-lowest text-primary px-6 py-3 rounded-lg font-bold w-full hover:bg-secondary hover:text-white transition-all relative z-10"
+        >
+          Ontmoet onze Coaches
+        </button>
+      </div>
+      <!-- Three Small Feature Cards -->
+      <div
+        class="md:col-span-4 group card-hover bg-surface-container-low p-8 rounded-xl border border-outline-variant transition-all"
+      >
+        <div
+          class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6"
+        >
+          <span class="material-symbols-outlined text-on-primary-container">sports_score</span>
+        </div>
+        <h4 class="font-headline-md text-headline-md text-[20px] mb-3">
+          Gestructureerde Programma's
+        </h4>
+        <p class="text-on-surface-variant">
+          Methodisch opgebouwde leerlijnen die talent van elk niveau naar een hoger plan tillen.
+        </p>
+      </div>
+      <div
+        class="md:col-span-4 group card-hover bg-surface-container-low p-8 rounded-xl border border-outline-variant transition-all"
+      >
+        <div
+          class="w-12 h-12 bg-tertiary-container rounded-lg flex items-center justify-center mb-6"
+        >
+          <span class="material-symbols-outlined text-on-tertiary-container">model_training</span>
+        </div>
+        <h4 class="font-headline-md text-headline-md text-[20px] mb-3">Coach-de-Coach</h4>
+        <p class="text-on-surface-variant">
+          Wij begeleiden uw eigen trainers om specialistische technieken met vertrouwen over te
+          brengen.
+        </p>
+      </div>
+      <div
+        class="md:col-span-4 group card-hover bg-surface-container-low p-8 rounded-xl border border-outline-variant transition-all"
+      >
+        <div
+          class="w-12 h-12 bg-secondary-container text-white rounded-lg flex items-center justify-center mb-6"
+        >
+          <span class="material-symbols-outlined">group_add</span>
+        </div>
+        <h4 class="font-headline-md text-headline-md text-[20px] mb-3">Exclusieve Groei</h4>
+        <p class="text-on-surface-variant">
+          Professionalisering trekt nieuwe leden aan en versterkt de loyaliteit van uw huidige
+          achterban.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Asymmetric Performance Section -->
+  <section class="bg-on-background py-24 overflow-hidden">
+    <div
+      class="px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row items-center gap-16"
+    >
+      <div class="w-full md:w-1/2 relative">
+        <div class="relative z-10 aspect-[4/5] rounded-xl overflow-hidden border-4 border-primary">
+          <Image
+            src={ringenImg}
+            class="w-full h-full object-cover"
+            alt="Turner voert een ringenoefening uit in een moderne sporthal"
+          />
+        </div>
+        <div
+          class="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary rounded-full blur-[100px] opacity-20"
+        >
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 text-on-primary">
+        <h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">
+          Van Breedtesport naar <span class="text-primary-fixed">Excelleren</span>.
+        </h2>
+        <ul class="space-y-6">
+          <li class="flex gap-4">
+            <span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+            <div>
+              <p class="font-bold text-lg">Specialistische Expertise</p>
+              <p class="text-surface-variant opacity-80">
+                Toegang tot coaches die op het hoogste nationale niveau hebben gepresteerd.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+            <div>
+              <p class="font-bold text-lg">Individuele Leerlijnen</p>
+              <p class="text-surface-variant opacity-80">
+                Geen algemene training, maar gerichte feedback voor maximale talentontwikkeling.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+            <div>
+              <p class="font-bold text-lg">Certificering &amp; Status</p>
+              <p class="text-surface-variant opacity-80">
+                Draag uit dat uw vereniging staat voor topkwaliteit en erkende lesmethoden.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <button
+          class="mt-12 bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-lg font-bold hover:scale-105 transition-transform"
+        >
+          Vraag een Audit aan
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Membership Growth Grid -->
+  <section class="py-24 px-margin-desktop max-w-container-max mx-auto text-center">
+    <h2 class="font-headline-lg text-headline-lg mb-16">Een Visie voor Elke Vereniging</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <div
+        class="bg-surface-container p-8 rounded-xl border border-outline-variant text-left hover:border-primary transition-colors cursor-default"
+      >
+        <h5 class="font-label-sm text-label-sm text-primary mb-2 uppercase tracking-widest">
+          Fase 01
+        </h5>
+        <h4 class="font-headline-md text-headline-md text-[24px] mb-4">Analyse &amp; Plan</h4>
+        <p class="text-on-surface-variant mb-6">
+          We brengen de huidige status van uw trainers en programma's in kaart en stellen ambitieuze
+          doelen.
+        </p>
+        <div class="h-1 bg-outline-variant w-full relative overflow-hidden rounded-full">
+          <div class="absolute inset-0 bg-primary w-1/3"></div>
+        </div>
+      </div>
+      <div
+        class="bg-surface-container p-8 rounded-xl border border-outline-variant text-left hover:border-primary transition-colors cursor-default"
+      >
+        <h5 class="font-label-sm text-label-sm text-primary mb-2 uppercase tracking-widest">
+          Fase 02
+        </h5>
+        <h4 class="font-headline-md text-headline-md text-[24px] mb-4">Implementatie</h4>
+        <p class="text-on-surface-variant mb-6">
+          Onze experts komen op locatie om lesprogramma's uit te rollen en uw team direct te
+          trainen.
+        </p>
+        <div class="h-1 bg-outline-variant w-full relative overflow-hidden rounded-full">
+          <div class="absolute inset-0 bg-primary w-2/3"></div>
+        </div>
+      </div>
+      <div
+        class="bg-surface-container p-8 rounded-xl border border-outline-variant text-left hover:border-primary transition-colors cursor-default"
+      >
+        <h5 class="font-label-sm text-label-sm text-primary mb-2 uppercase tracking-widest">
+          Fase 03
+        </h5>
+        <h4 class="font-headline-md text-headline-md text-[24px] mb-4">Zelfstandige Groei</h4>
+        <p class="text-on-surface-variant mb-6">
+          Uw club opereert op een nieuw kwaliteitsniveau, trekt partners aan en ziet het ledenaantal
+          stijgen.
+        </p>
+        <div class="h-1 bg-outline-variant w-full relative overflow-hidden rounded-full">
+          <div class="absolute inset-0 bg-primary w-full"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CTA Section -->
+  <section class="mb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div
+      class="bg-secondary rounded-3xl p-12 md:p-20 text-on-secondary flex flex-col items-center text-center relative overflow-hidden"
+    >
+      <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <div class="grid grid-cols-6 h-full w-full">
+          <div class="border-r border-white"></div><div class="border-r border-white"></div><div
+            class="border-r border-white"
+          >
+          </div><div class="border-r border-white"></div><div class="border-r border-white">
+          </div><div></div>
+        </div>
+      </div>
+      <h2 class="font-headline-lg text-headline-lg mb-6 relative z-10">
+        Klaar om de standaard te verleggen?
+      </h2>
+      <p class="font-body-lg text-body-lg mb-10 max-w-2xl opacity-90 relative z-10">
+        Neem contact op voor een vrijblijvend gesprek over hoe wij uw vereniging kunnen
+        transformeren naar een bolwerk van talentontwikkeling.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 relative z-10">
+        <a
+          href="/contact"
+          class="bg-surface-container-lowest text-secondary px-12 py-4 rounded-lg font-bold text-lg hover:scale-105 transition-transform active:scale-95 shadow-xl"
+        >
+          Plan een Gesprek
+        </a>
+        <a
+          href="tel:+31000000000"
+          class="border-2 border-white text-white px-12 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all"
+        >
+          Bel ons direct
+        </a>
+      </div>
+    </div>
+  </section>
 
-<!-- Hero Section -->
-<section class="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden pt-20">
-<div class="absolute inset-0 z-0">
-<img alt="Gymnast performing on beam" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxi9dk0abyxWR7PoBUwOYquz2KKJ2uZAHw3fmDrwatv8Ih6Uzs4hRleEoIkt5IH7Fmp60OjYj8damxH2nmHxKXoWSAqlZdv22hz3ZXYwW9blJPqH0fm4KupJqFBiopyHz-t7cyerGZb8y5fMqpU7aT6NGQb5Ii8Xlg5FsUf0lbdKxHXk1LiRVpBWFwk-Jy7B21TShKkQBFB3XnFhSO4wFtAmFwwiD8RchO1LJcMcSXDxmUwZAY63HjIiGFEurM2O2AcqQy_JDbuVU"/>
-<div class="absolute inset-0 hero-gradient-sports"></div>
-</div>
-<div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto">
-<div class="max-w-3xl">
-<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm mb-6 uppercase tracking-wider">
-                        Sportverenigingen
-                    </span>
-<h1 class="font-headline-lg text-headline-lg text-on-primary mb-6 leading-tight">
-                        Verhoog het <span class="text-primary-fixed">aanzien</span> van uw vereniging door specialistische talentontwikkeling.
-                    </h1>
-<p class="text-surface-variant text-body-lg font-body-lg mb-10 max-w-2xl">
-                        Professionaliseer uw aanbod met gestructureerde lesprogramma's en expert coaching. Help uw leden excelleren en transformeer uw club tot een regionaal centrum van topkwaliteit.
-                    </p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-secondary text-on-secondary px-10 py-4 rounded-lg font-bold text-body-lg hover:opacity-90 transition-all shadow-lg active:translate-y-1">
-                            Start Professionalisering
-                        </button>
-<button class="border-2 border-primary text-primary-fixed px-10 py-4 rounded-lg font-bold text-body-lg hover:bg-primary hover:text-white transition-all">
-                            Bekijk Programma's
-                        </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Dynamic Value Props (Bento Grid Style) -->
-<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<!-- Lead Card -->
-<div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl border border-outline-variant ambient-shadow flex flex-col justify-between">
-<div>
-<span class="material-symbols-outlined text-primary text-4xl mb-6">workspace_premium</span>
-<h2 class="font-headline-md text-headline-md mb-4">Focus op Kwaliteit &amp; Groei</h2>
-<p class="text-on-surface-variant text-body-lg mb-8">
-                            Een vereniging groeit wanneer de kwaliteit van het aanbod stijgt. Wij bieden een blauwdruk voor succes die verder gaat dan alleen training; het is een herpositionering van uw clubidentiteit.
-                        </p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-<div class="border-l-4 border-primary pl-4">
-<div class="font-headline-md text-primary">+25%</div>
-<div class="text-label-sm font-label-sm uppercase">Ledenbehoud</div>
-</div>
-<div class="border-l-4 border-secondary pl-4">
-<div class="font-headline-md text-secondary">Expert</div>
-<div class="text-label-sm font-label-sm uppercase">Status</div>
-</div>
-<div class="border-l-4 border-primary pl-4">
-<div class="font-headline-md text-primary">100%</div>
-<div class="text-label-sm font-label-sm uppercase">Focus</div>
-</div>
-</div>
-</div>
-<!-- Secondary Card -->
-<div class="md:col-span-4 bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-center items-center text-center overflow-hidden relative">
-<div class="absolute top-0 right-0 p-4 opacity-10">
-<span class="material-symbols-outlined text-[120px]">trending_up</span>
-</div>
-<h3 class="font-headline-md text-headline-md mb-4 relative z-10">Klaar voor de volgende stap?</h3>
-<p class="mb-8 opacity-90 relative z-10">Onze methode helpt trainers naar een hoger niveau te stijgen.</p>
-<button class="bg-surface-container-lowest text-primary px-6 py-3 rounded-lg font-bold w-full hover:bg-secondary hover:text-white transition-all relative z-10">
-                        Ontmoet onze Coaches
-                    </button>
-</div>
-<!-- Three Small Feature Cards -->
-<div class="md:col-span-4 group card-hover bg-surface-container-low p-8 rounded-xl border border-outline-variant transition-all">
-<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-on-primary-container">sports_score</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-[20px] mb-3">Gestructureerde Programma's</h4>
-<p class="text-on-surface-variant">Methodisch opgebouwde leerlijnen die talent van elk niveau naar een hoger plan tillen.</p>
-</div>
-<div class="md:col-span-4 group card-hover bg-surface-container-low p-8 rounded-xl border border-outline-variant transition-all">
-<div class="w-12 h-12 bg-tertiary-container rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-on-tertiary-container">model_training</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-[20px] mb-3">Coach-de-Coach</h4>
-<p class="text-on-surface-variant">Wij begeleiden uw eigen trainers om specialistische technieken met vertrouwen over te brengen.</p>
-</div>
-<div class="md:col-span-4 group card-hover bg-surface-container-low p-8 rounded-xl border border-outline-variant transition-all">
-<div class="w-12 h-12 bg-secondary-container text-white rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined">group_add</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-[20px] mb-3">Exclusieve Groei</h4>
-<p class="text-on-surface-variant">Professionalisering trekt nieuwe leden aan en versterkt de loyaliteit van uw huidige achterban.</p>
-</div>
-</div>
-</section>
-<!-- Asymmetric Performance Section -->
-<section class="bg-on-background py-24 overflow-hidden">
-<div class="px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row items-center gap-16">
-<div class="w-full md:w-1/2 relative">
-<div class="relative z-10 aspect-[4/5] rounded-xl overflow-hidden border-4 border-primary">
-<img class="w-full h-full object-cover" data-alt="A dynamic, high-performance wide-angle shot of a male gymnast executing a complex rings routine in a modern dark-walled gymnasium. Intense white spotlights cut through the dark atmosphere, reflecting off metallic equipment. The aesthetic is professional and athletic, dominated by primary teal lighting accents and deep navy shadows, conveying a sense of high-stakes performance and elite training quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6N1eUIyk3exi0Oz2h-_G8bCIQRyvOc9qp8SF2_VdVRrjgkUKmD-r2RNrejRs557ZCQqm32JdVVDY4_69Za7Km-ljN2oA-k5aBifZbZa9DaWSBKsQK0-G2iysIFijjLCI_7LTwV28UM86A26bg9E2e340Wk5RQRWTr1-OOdUljXA4wq797XYMqC6c5HsapQK38dWJo_UaEH4npOBcJev8df-T5eIG0IU2xE1dLBLxgcy7cinP9N0crj7-jbS9BN9oP31-4okfCCKg"/>
-</div>
-<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary rounded-full blur-[100px] opacity-20"></div>
-</div>
-<div class="w-full md:w-1/2 text-on-primary">
-<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">
-                        Van Breedtesport naar <span class="text-primary-fixed">Excelleren</span>.
-                    </h2>
-<ul class="space-y-6">
-<li class="flex gap-4">
-<span class="material-symbols-outlined text-primary-fixed">check_circle</span>
-<div>
-<p class="font-bold text-lg">Specialistische Expertise</p>
-<p class="text-surface-variant opacity-80">Toegang tot coaches die op het hoogste nationale niveau hebben gepresteerd.</p>
-</div>
-</li>
-<li class="flex gap-4">
-<span class="material-symbols-outlined text-primary-fixed">check_circle</span>
-<div>
-<p class="font-bold text-lg">Individuele Leerlijnen</p>
-<p class="text-surface-variant opacity-80">Geen algemene training, maar gerichte feedback voor maximale talentontwikkeling.</p>
-</div>
-</li>
-<li class="flex gap-4">
-<span class="material-symbols-outlined text-primary-fixed">check_circle</span>
-<div>
-<p class="font-bold text-lg">Certificering &amp; Status</p>
-<p class="text-surface-variant opacity-80">Draag uit dat uw vereniging staat voor topkwaliteit en erkende lesmethoden.</p>
-</div>
-</li>
-</ul>
-<button class="mt-12 bg-primary-fixed text-on-primary-fixed px-8 py-4 rounded-lg font-bold hover:scale-105 transition-transform">
-                        Vraag een Audit aan
-                    </button>
-</div>
-</div>
-</section>
-<!-- Membership Growth Grid -->
-<section class="py-24 px-margin-desktop max-w-container-max mx-auto text-center">
-<h2 class="font-headline-lg text-headline-lg mb-16">Een Visie voor Elke Vereniging</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="bg-surface-container p-8 rounded-xl border border-outline-variant text-left hover:border-primary transition-colors cursor-default">
-<h5 class="font-label-sm text-label-sm text-primary mb-2 uppercase tracking-widest">Fase 01</h5>
-<h4 class="font-headline-md text-headline-md text-[24px] mb-4">Analyse &amp; Plan</h4>
-<p class="text-on-surface-variant mb-6">We brengen de huidige status van uw trainers en programma's in kaart en stellen ambitieuze doelen.</p>
-<div class="h-1 bg-outline-variant w-full relative overflow-hidden rounded-full">
-<div class="absolute inset-0 bg-primary w-1/3"></div>
-</div>
-</div>
-<div class="bg-surface-container p-8 rounded-xl border border-outline-variant text-left hover:border-primary transition-colors cursor-default">
-<h5 class="font-label-sm text-label-sm text-primary mb-2 uppercase tracking-widest">Fase 02</h5>
-<h4 class="font-headline-md text-headline-md text-[24px] mb-4">Implementatie</h4>
-<p class="text-on-surface-variant mb-6">Onze experts komen op locatie om lesprogramma's uit te rollen en uw team direct te trainen.</p>
-<div class="h-1 bg-outline-variant w-full relative overflow-hidden rounded-full">
-<div class="absolute inset-0 bg-primary w-2/3"></div>
-</div>
-</div>
-<div class="bg-surface-container p-8 rounded-xl border border-outline-variant text-left hover:border-primary transition-colors cursor-default">
-<h5 class="font-label-sm text-label-sm text-primary mb-2 uppercase tracking-widest">Fase 03</h5>
-<h4 class="font-headline-md text-headline-md text-[24px] mb-4">Zelfstandige Groei</h4>
-<p class="text-on-surface-variant mb-6">Uw club opereert op een nieuw kwaliteitsniveau, trekt partners aan en ziet het ledenaantal stijgen.</p>
-<div class="h-1 bg-outline-variant w-full relative overflow-hidden rounded-full">
-<div class="absolute inset-0 bg-primary w-full"></div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="mb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<div class="bg-secondary rounded-3xl p-12 md:p-20 text-on-secondary flex flex-col items-center text-center relative overflow-hidden">
-<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-<div class="grid grid-cols-6 h-full w-full">
-<div class="border-r border-white"></div><div class="border-r border-white"></div><div class="border-r border-white"></div><div class="border-r border-white"></div><div class="border-r border-white"></div><div></div>
-</div>
-</div>
-<h2 class="font-headline-lg text-headline-lg mb-6 relative z-10">Klaar om de standaard te verleggen?</h2>
-<p class="font-body-lg text-body-lg mb-10 max-w-2xl opacity-90 relative z-10">
-  Neem contact op voor een vrijblijvend gesprek over hoe wij uw vereniging kunnen transformeren naar een bolwerk van talentontwikkeling.
-</p>
-<div class="flex flex-col sm:flex-row gap-4 relative z-10">
-<a href="/contact" class="bg-surface-container-lowest text-secondary px-12 py-4 rounded-lg font-bold text-lg hover:scale-105 transition-transform active:scale-95 shadow-xl">
-  Plan een Gesprek
-</a>
-<a href="tel:+31000000000" class="border-2 border-white text-white px-12 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all">
-  Bel ons direct
-</a>
-</div>
-</div>
-</section>
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('opacity-100', 'translate-y-0');
-        entry.target.classList.remove('opacity-0', 'translate-y-8');
-      }
+    document.querySelectorAll('.card-hover').forEach((card) => {
+      card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+      observer.observe(card);
     });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.card-hover').forEach(card => {
-    card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
-    observer.observe(card);
-  });
-</script>
-
+  </script>
 </BaseLayout>
-

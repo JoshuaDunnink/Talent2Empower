@@ -1,46 +1,67 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import nederlandImg from '../assets/images/contact-9b1c0cd6.jpg';
 ---
 
-<BaseLayout 
-  title="Contact - Talent2Empower" 
+<BaseLayout
+  title="Contact - Talent2Empower"
   description="Neem contact op met Talent2Empower. Wij helpen je graag verder met vragen over ouders, scholen of sportverenigingen."
 >
   <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-bright">
     <div class="max-w-container-max mx-auto">
-      <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden grid md:grid-cols-2 border border-outline-variant/30">
+      <div
+        class="bg-white rounded-[2rem] shadow-2xl overflow-hidden grid md:grid-cols-2 border border-outline-variant/30"
+      >
         <!-- Contact Information -->
         <div class="p-12 bg-primary text-on-primary space-y-12">
           <div>
             <h1 class="font-headline-md text-4xl md:text-5xl font-bold mb-6">Zet de eerste stap</h1>
-            <p class="font-body text-xl opacity-90">Klaar voor meer rust, controle of groei? Laat ons weten hoe we kunnen helpen en we nemen binnen 24 uur contact met u op.</p>
+            <p class="font-body text-xl opacity-90">
+              Klaar voor meer rust, controle of groei? Laat ons weten hoe we kunnen helpen en we
+              nemen binnen 24 uur contact met u op.
+            </p>
           </div>
-          
+
           <div class="space-y-8">
             <div class="flex items-center gap-6">
-              <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
+              <div
+                class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20"
+              >
                 <span class="material-symbols-outlined text-3xl">mail</span>
               </div>
               <div>
-                <p class="font-label-sm text-xs uppercase tracking-widest opacity-70 mb-1">Email ons</p>
+                <p class="font-label-sm text-xs uppercase tracking-widest opacity-70 mb-1">
+                  Email ons
+                </p>
                 <p class="font-body text-lg font-bold">info@talent2empower.nl</p>
               </div>
             </div>
-            
+
             <div class="flex items-center gap-6">
-              <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
+              <div
+                class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20"
+              >
                 <span class="material-symbols-outlined text-3xl">location_on</span>
               </div>
               <div>
-                <p class="font-label-sm text-xs uppercase tracking-widest opacity-70 mb-1">Locatie</p>
+                <p class="font-label-sm text-xs uppercase tracking-widest opacity-70 mb-1">
+                  Locatie
+                </p>
                 <p class="font-body text-lg font-bold">Nederland - Werkzaam op locatie</p>
               </div>
             </div>
           </div>
 
           <div class="pt-8">
-            <div class="w-full aspect-video rounded-2xl overflow-hidden grayscale opacity-40 contrast-125 border border-white/10">
-              <img alt="Focus op Nederland" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArKvjfOZYKzvnLuxlzu6c6INNGWR5_D_B6IG-_-m25aTNSBqCgnyTjjIudJdlFIDe7mkerbw_6R2JjoU7JwGgXsoL-E9XgXlHWwsjahzmxiCpnMoTjlL81_w4PlTim-LkqZ_yx9I0b9_RacBFr5n3Rl1EuuADUPS3IfVnfIPDoJ-vAqyEykLvEaRLm23W3hNCPLMGR8CBKejtZJgaoJL7pEXwZ7g0PkSNwkEwTI8fzYhWA4mHFWcxWU7FX5984UAsNkMrLNZq-WC0"/>
+            <div
+              class="w-full aspect-video rounded-2xl overflow-hidden grayscale opacity-40 contrast-125 border border-white/10"
+            >
+              <Image
+                src={nederlandImg}
+                alt="Focus op Nederland"
+                class="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -50,50 +71,89 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <form class="space-y-8">
             <div class="grid sm:grid-cols-2 gap-8">
               <div class="space-y-3">
-                <label class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant">Volledige Naam</label>
-                <input class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body transition-colors" placeholder="Uw naam" required type="text"/>
+                <label
+                  class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+                  >Volledige Naam</label
+                >
+                <input
+                  class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body transition-colors"
+                  placeholder="Uw naam"
+                  required
+                  type="text"
+                />
               </div>
               <div class="space-y-3">
-                <label class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant">E-mailadres</label>
-                <input class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body transition-colors" placeholder="naam@voorbeeld.nl" required type="email"/>
+                <label
+                  class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+                  >E-mailadres</label
+                >
+                <input
+                  class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body transition-colors"
+                  placeholder="naam@voorbeeld.nl"
+                  required
+                  type="email"
+                />
               </div>
             </div>
-            
+
             <div class="space-y-3">
-              <label class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant">Ik ben geïnteresseerd voor:</label>
+              <label
+                class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+                >Ik ben geïnteresseerd voor:</label
+              >
               <div class="relative">
-                <select class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body appearance-none transition-colors">
+                <select
+                  class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body appearance-none transition-colors"
+                >
                   <option>Kies een optie</option>
                   <option>Ouder - Rust voor mijn gezin</option>
                   <option>School - Controle & CoFun</option>
                   <option>Sport - Professionalisering</option>
                   <option>Anders</option>
                 </select>
-                <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-primary">
+                <div
+                  class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-primary"
+                >
                   <span class="material-symbols-outlined">expand_more</span>
                 </div>
               </div>
             </div>
-            
+
             <div class="space-y-3">
-              <label class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant">Uw Bericht</label>
-              <textarea class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body transition-colors" placeholder="Hoe kunnen we uw situatie verbeteren?" rows="5" required></textarea>
+              <label
+                class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+                >Uw Bericht</label
+              >
+              <textarea
+                class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body transition-colors"
+                placeholder="Hoe kunnen we uw situatie verbeteren?"
+                rows="5"
+                required></textarea>
             </div>
-            
-            <button class="w-full py-5 bg-secondary text-on-secondary rounded-xl font-body font-bold text-lg hover:bg-secondary-container transition-all shadow-xl shadow-secondary/20 active:scale-[0.98]" type="submit">
+
+            <button
+              class="w-full py-5 bg-secondary text-on-secondary rounded-xl font-body font-bold text-lg hover:bg-secondary-container transition-all shadow-xl shadow-secondary/20 active:scale-[0.98]"
+              type="submit"
+            >
               Bericht Verzenden
             </button>
           </form>
-          
-          <div class="mt-10 pt-10 border-t border-outline-variant/30 flex items-center gap-6 justify-center">
-             <div class="flex items-center gap-3 grayscale opacity-60">
-                <span class="material-symbols-outlined text-primary">verified</span>
-                <span class="font-label-sm text-[10px] font-bold uppercase tracking-tighter">Bewezen Impact</span>
-             </div>
-             <div class="flex items-center gap-3 grayscale opacity-60">
-                <span class="material-symbols-outlined text-primary">security</span>
-                <span class="font-label-sm text-[10px] font-bold uppercase tracking-tighter">Veilige Gegevens</span>
-             </div>
+
+          <div
+            class="mt-10 pt-10 border-t border-outline-variant/30 flex items-center gap-6 justify-center"
+          >
+            <div class="flex items-center gap-3 grayscale opacity-60">
+              <span class="material-symbols-outlined text-primary">verified</span>
+              <span class="font-label-sm text-[10px] font-bold uppercase tracking-tighter"
+                >Bewezen Impact</span
+              >
+            </div>
+            <div class="flex items-center gap-3 grayscale opacity-60">
+              <span class="material-symbols-outlined text-primary">security</span>
+              <span class="font-label-sm text-[10px] font-bold uppercase tracking-tighter"
+                >Veilige Gegevens</span
+              >
+            </div>
           </div>
         </div>
       </div>

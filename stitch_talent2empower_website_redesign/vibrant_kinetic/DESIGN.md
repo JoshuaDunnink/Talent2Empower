@@ -128,9 +128,9 @@ To lean into the technical and sporty aspect of the design system, **JetBrains M
 
 ## Layout & Spacing
 
-The layout follows a **Fluid Grid** model with a strict 8px base unit. 
+The layout follows a **Fluid Grid** model with a strict 8px base unit.
 
-- **Desktop:** A 12-column grid with generous 40px outer margins to create a "contained yet airy" professional feel. 
+- **Desktop:** A 12-column grid with generous 40px outer margins to create a "contained yet airy" professional feel.
 - **Tablet:** 8-column grid with 24px margins.
 - **Mobile:** 4-column grid with 16px margins.
 
@@ -144,7 +144,7 @@ Where elevation is required for interactivity, use **Ambient Shadows**: extremel
 
 ## Shapes
 
-The shape language is **Rounded**, using a 0.5rem (8px) base radius. This strikes the balance between the precision of "sharp" professional tools and the approachability of "friendly" consumer apps. 
+The shape language is **Rounded**, using a 0.5rem (8px) base radius. This strikes the balance between the precision of "sharp" professional tools and the approachability of "friendly" consumer apps.
 
 - **Interactive Elements:** (Buttons, Inputs) Use the base 8px radius.
 - **Large Containers:** (Cards, Modals) Scale up to 1rem (16px) or 1.5rem (24px) for a more modern, lifestyle-focused feel.
@@ -152,7 +152,7 @@ The shape language is **Rounded**, using a 0.5rem (8px) base radius. This strike
 
 ## Components
 
-- **Buttons:** Primary buttons use the Secondary Orange with white text for maximum energy. Secondary buttons use a thick 2px outline of the Primary Teal. 
+- **Buttons:** Primary buttons use the Secondary Orange with white text for maximum energy. Secondary buttons use a thick 2px outline of the Primary Teal.
 - **Chips:** Highly saturated backgrounds with dark text. Use the label-sm (Monospaced) font for a "pro-gear" aesthetic.
 - **Input Fields:** Use 1px Slate borders that transition to a 2px Primary Teal border on focus. No inner shadows; keep them flat and crisp.
 - **Cards:** White backgrounds with a subtle 1px border. On hover, apply an Ambient Shadow and a slight upward vertical translation (2px) to simulate "energy."

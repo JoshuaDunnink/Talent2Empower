@@ -1,0 +1,129 @@
+---
+interface Photo {
+  src: string;
+  thumb?: string;
+  width: number;
+  height: number;
+  alt: string;
+}
+interface Props {
+  photos: Photo[];
+  class?: string;
+}
+const { photos, class: className } = Astro.props;
+---
+
+<div class:list={['relative', className]} data-carousel>
+  <div
+    data-track
+    tabindex="0"
+    role="region"
+    aria-roledescription="carrousel"
+    aria-label="Portfolio foto's"
+    class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar rounded-xl focus-visible:outline-2 focus-visible:outline-primary"
+  >
+    {
+      photos.map((p, i) => (
+        <figure class="snap-center shrink-0 w-full relative aspect-[21/9] min-h-[300px]">
+          <img
+            src={p.src}
+            width={p.width}
+            height={p.height}
+            alt={p.alt}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+            class="w-full h-full object-cover"
+          />
+          <figcaption class="absolute bottom-8 left-8">
+            <span class="bg-black/60 backdrop-blur-md px-4 py-2 text-label-sm font-label-sm uppercase text-white rounded">
+              {p.alt}
+            </span>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+  <div
+    class="absolute inset-0 pointer-events-none border-[12px] border-surface-container-lowest/50 rounded-xl"
+  >
+  </div>
+
+  <button
+    data-prev
+    aria-label="Vorige foto"
+    class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center glass-panel rounded-full hover:bg-primary/20 transition-all text-on-surface"
+  >
+    <span class="material-symbols-outlined">arrow_back</span>
+  </button>
+  <button
+    data-next
+    aria-label="Volgende foto"
+    class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center glass-panel rounded-full hover:bg-primary/20 transition-all text-on-surface"
+  >
+    <span class="material-symbols-outlined">arrow_forward</span>
+  </button>
+
+  <div data-dots class="flex justify-center gap-2 mt-6">
+    {
+      photos.map((_, i) => (
+        <button
+          data-dot
+          data-index={i}
+          aria-label={`Ga naar foto ${i + 1}`}
+          class="w-2.5 h-2.5 rounded-full bg-outline-variant transition-colors"
+        />
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('[data-track]');
+    if (!track) return;
+    const slides = [...track.children] as HTMLElement[];
+    const dots = [...root.querySelectorAll<HTMLElement>('[data-dot]')];
+
+    const scrollBySlide = (dir: number) => {
+      track.scrollBy({ left: dir * track.clientWidth, behavior: 'smooth' });
+    };
+    root.querySelector('[data-prev]')?.addEventListener('click', () => scrollBySlide(-1));
+    root.querySelector('[data-next]')?.addEventListener('click', () => scrollBySlide(1));
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const i = Number(dot.dataset.index);
+        slides[i]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      });
+    });
+
+    const setActive = (index: number) => {
+      dots.forEach((d, i) => {
+        d.classList.toggle('bg-primary', i === index);
+        d.classList.toggle('bg-outline-variant', i !== index);
+      });
+    };
+    setActive(0);
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(slides.indexOf(entry.target as HTMLElement));
+        });
+      },
+      { root: track, threshold: 0.6 }
+    );
+    slides.forEach((s) => io.observe(s));
+
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        scrollBySlide(-1);
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        scrollBySlide(1);
+      }
+    });
+  });
+</script>

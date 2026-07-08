@@ -1,0 +1,517 @@
+<!doctype html>
+
+<html class="dark" lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(17, 19, 24, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(174, 198, 255, 0.1);
+      }
+      .text-glow {
+        text-shadow: 0 0 20px rgba(0, 219, 231, 0.3);
+      }
+      .ocean-gradient {
+        background: linear-gradient(135deg, #001a42 0%, #00363a 100%);
+      }
+      body {
+        background-color: #111318;
+        color: #e2e2e8;
+        overflow-x: hidden;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'on-primary-container': '#00275e',
+              outline: '#8b90a1',
+              'on-background': '#e2e2e8',
+              'primary-fixed-dim': '#aec6ff',
+              'on-secondary-fixed': '#002022',
+              'tertiary-fixed': '#ffdad2',
+              'outline-variant': '#414755',
+              secondary: '#ddfcff',
+              'surface-bright': '#37393e',
+              'surface-dim': '#111318',
+              'primary-container': '#4f8eff',
+              'on-tertiary-fixed-variant': '#8a1d00',
+              'surface-container-lowest': '#0c0e12',
+              'on-secondary': '#00363a',
+              'inverse-on-surface': '#2f3035',
+              'inverse-surface': '#e2e2e8',
+              'on-surface-variant': '#c1c6d7',
+              'secondary-fixed-dim': '#00dbe7',
+              'on-primary-fixed': '#001a42',
+              'error-container': '#93000a',
+              'on-error-container': '#ffdad6',
+              'on-secondary-fixed-variant': '#004f54',
+              tertiary: '#ffb4a2',
+              primary: '#aec6ff',
+              background: '#111318',
+              error: '#ffb4ab',
+              'secondary-container': '#00f1fe',
+              'inverse-primary': '#005ac4',
+              'on-error': '#690005',
+              'on-secondary-container': '#006a70',
+              'on-tertiary-container': '#560e00',
+              'on-primary-fixed-variant': '#004396',
+              surface: '#111318',
+              'on-tertiary-fixed': '#3c0700',
+              'secondary-fixed': '#74f5ff',
+              'on-primary': '#002e6a',
+              'surface-tint': '#aec6ff',
+              'surface-container': '#1e2024',
+              'surface-container-high': '#282a2e',
+              'tertiary-container': '#ff562c',
+              'on-surface': '#e2e2e8',
+              'primary-fixed': '#d8e2ff',
+              'tertiary-fixed-dim': '#ffb4a2',
+              'on-tertiary': '#621100',
+              'surface-container-low': '#1a1c20',
+              'surface-container-highest': '#333539',
+              'surface-variant': '#333539',
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+            spacing: {
+              gutter: '24px',
+              'margin-desktop': '64px',
+              'margin-mobile': '16px',
+              base: '8px',
+              'container-max': '1440px',
+            },
+            fontFamily: {
+              'display-xl': ['Anybody'],
+              'body-lg': ['Hanken Grotesk'],
+              'headline-xl': ['Anybody'],
+              'label-sm': ['JetBrains Mono'],
+              'display-lg': ['Anybody'],
+              'headline-lg': ['Anybody'],
+              'headline-lg-mobile': ['Anybody'],
+              'label-md': ['JetBrains Mono'],
+              'body-md': ['Hanken Grotesk'],
+            },
+            fontSize: {
+              'display-xl': [
+                '80px',
+                { lineHeight: '88px', letterSpacing: '-0.04em', fontWeight: '800' },
+              ],
+              'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }],
+              'headline-xl': [
+                '48px',
+                { lineHeight: '56px', letterSpacing: '-0.02em', fontWeight: '700' },
+              ],
+              'label-sm': [
+                '12px',
+                { lineHeight: '16px', letterSpacing: '0.08em', fontWeight: '500' },
+              ],
+              'display-lg': [
+                '64px',
+                { lineHeight: '72px', letterSpacing: '-0.03em', fontWeight: '800' },
+              ],
+              'headline-lg': [
+                '32px',
+                { lineHeight: '40px', letterSpacing: '-0.02em', fontWeight: '700' },
+              ],
+              'headline-lg-mobile': [
+                '28px',
+                { lineHeight: '36px', letterSpacing: '-0.01em', fontWeight: '700' },
+              ],
+              'label-md': [
+                '14px',
+                { lineHeight: '20px', letterSpacing: '0.05em', fontWeight: '500' },
+              ],
+              'body-md': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="font-body-md text-on-background selection:bg-secondary-fixed-dim selection:text-on-secondary-fixed"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/20 transition-all duration-300 ease-in-out"
+    >
+      <div
+        class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto"
+      >
+        <a
+          class="font-display-lg text-[24px] md:text-display-lg font-extrabold tracking-tighter text-primary"
+          href="#"
+          >Talent2Empower</a
+        >
+        <div class="hidden lg:flex items-center gap-8">
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Ouders</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Scholen</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Sportverenigingen</a
+          >
+          <a
+            class="font-body-md text-body-md text-secondary-fixed-dim border-b-2 border-secondary-fixed-dim pb-1"
+            href="#"
+            >Watersport</a
+          >
+          <a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Fotografie</a
+          >
+        </div>
+        <button
+          class="bg-primary hover:bg-primary-container text-on-primary font-label-md px-6 py-2 rounded-full transition-all duration-300"
+        >
+          Contact
+        </button>
+      </div>
+    </nav>
+    <main class="pt-20">
+      <!-- Hero Section: Experiential Growth -->
+      <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <img
+            alt="Experiential Growth"
+            class="w-full h-full object-cover opacity-60 scale-105 transform hover:scale-100 transition-transform duration-10000"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY3vKpctaSe5a76BdtDZaERG_-hH0LumLpz-1KW-IdKL_2acfL-BVCtTpeZlAUgxTvReqf3ggVJyp8Uzxc6B8Q58HohChBE_CJbX2Ml6JWmaLMEvFw4Qd4bckyHYgQPCu78RrasMkAvhNnQ4hHkCvRYJ9_Bt16smuctYspGKqQl4gXXV8GsDROzdLWcoY8qAJDeFWixFc9l94TVZqKWJIyHv8MqlZO2BHiAuQDVEsCl7vfoAWQ7TEQCqtBjmXLvjllpUXPfySVN5E"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"
+          ></div>
+        </div>
+        <div
+          class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full"
+        >
+          <div class="max-w-2xl">
+            <span
+              class="inline-block font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-[0.2em] mb-6"
+              >Windsurf &amp; Wingfoil Lessen</span
+            >
+            <h1 class="font-display-xl text-[48px] leading-[54px] md:text-display-xl mb-8">
+              Experiential <br /><span class="text-secondary-fixed-dim">Growth</span>
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+              Ontdek je ware potentieel door de kracht van de elementen. Wij gebruiken windsurfen en
+              wingfoilen als katalysator voor veerkracht, focus en persoonlijke groei.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button
+                class="bg-secondary-fixed-dim text-on-secondary-fixed font-label-md px-8 py-4 rounded-lg flex items-center justify-center gap-2 group overflow-hidden relative"
+              >
+                <span class="relative z-10">Begin Jouw Reis</span>
+                <span
+                  class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </button>
+              <button
+                class="glass-panel text-on-surface font-label-md px-8 py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-colors"
+              >
+                Onze Methode
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute bottom-10 left-margin-desktop hidden lg:flex items-center gap-12 border-l border-outline-variant/30 pl-8"
+        >
+          <div>
+            <div class="font-display-lg text-[32px] text-primary">100%</div>
+            <div class="font-label-sm text-outline-variant uppercase">Focus &amp; Flow</div>
+          </div>
+          <div>
+            <div class="font-display-lg text-[32px] text-primary">Expert</div>
+            <div class="font-label-sm text-outline-variant uppercase">Begeleiding</div>
+          </div>
+        </div>
+      </section>
+      <!-- The Program: Resilience through Challenge -->
+      <section class="py-24 md:py-32 bg-surface">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 order-2 lg:order-1">
+              <div class="relative rounded-2xl overflow-hidden aspect-[4/5] group">
+                <img
+                  alt="Resilience through challenge"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2UqUAOi_3Dmw8YhOwtZT6CtZli-LXjkQC-8LdgvoEpdyPmybr377Z1OKXRKAmSCSH6tgMJY-OcA1-VmipPo7HsP1vyMY6cu0L88wePt2xf2VekkzHmFQS2NT_6fZvl0FvgZhzyxQb9n7UVanRC78qQt6Kc90LS8qXFTtigOMl3ag4-nx1theDHRnasKNFAjp3BdSiBbBBrSmvytQeyzCsrzYpn8xh0MQCJwWSE4tmNgVVwgWXMfz2-cxQJ5OI9K4O0Ji3J4MRy0"
+                />
+                <div class="absolute inset-0 bg-secondary-fixed-dim/10 mix-blend-overlay"></div>
+              </div>
+            </div>
+            <div class="lg:col-span-7 order-1 lg:order-2 space-y-8">
+              <div class="space-y-4">
+                <h2 class="font-headline-xl text-headline-xl">
+                  Veerkracht door <span class="text-secondary-fixed-dim">Uitdaging</span>
+                </h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                  Onze programma's zijn ontworpen om verder te gaan dan alleen de techniek van het
+                  varen. We navigeren door de wind om mentale grenzen te verleggen en cognitieve
+                  focus te versterken.
+                </p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div
+                  class="glass-panel p-6 rounded-xl hover:border-secondary-fixed-dim/40 transition-colors duration-300"
+                >
+                  <span class="material-symbols-outlined text-secondary-fixed-dim text-3xl mb-4"
+                    >waves</span
+                  >
+                  <h3 class="font-headline-lg text-headline-lg mb-2">Cognitieve Focus</h3>
+                  <p class="font-body-md text-on-surface-variant">
+                    Het constant anticiperen op wind en water traint je brein in snelle
+                    besluitvorming en diepe concentratie.
+                  </p>
+                </div>
+                <div
+                  class="glass-panel p-6 rounded-xl hover:border-secondary-fixed-dim/40 transition-colors duration-300"
+                >
+                  <span class="material-symbols-outlined text-secondary-fixed-dim text-3xl mb-4"
+                    >psychology</span
+                  >
+                  <h3 class="font-headline-lg text-headline-lg mb-2">Mentale Balans</h3>
+                  <p class="font-body-md text-on-surface-variant">
+                    Leer vallen, opstaan en rust bewaren in veranderende omstandigheden. Essentieel
+                    voor succes in het leven.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Safety & Expertise (Bento Style) -->
+      <section class="py-24 md:py-32 bg-surface-container-lowest">
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="font-display-lg text-headline-xl mb-4">
+              Veiligheid &amp; <span class="text-primary">Expertise</span>
+            </h2>
+            <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+              Professionele begeleiding met de modernste materialen, zodat jij je volledig kunt
+              richten op je groei.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+            <div
+              class="md:col-span-2 md:row-span-2 glass-panel p-10 rounded-2xl flex flex-col justify-end relative overflow-hidden group"
+            >
+              <div
+                class="absolute top-10 right-10 opacity-10 group-hover:opacity-20 transition-opacity"
+              >
+                <span
+                  class="material-symbols-outlined text-[120px] text-primary"
+                  style="font-variation-settings: 'FILL' 1"
+                  >verified_user</span
+                >
+              </div>
+              <div class="relative z-10">
+                <span class="font-label-sm text-primary uppercase mb-4 block"
+                  >01 / Certificering</span
+                >
+                <h3 class="font-display-lg text-headline-xl mb-4">Gecertificeerde Instructeurs</h3>
+                <p class="font-body-md text-on-surface-variant max-w-md">
+                  Onze coaches zijn experts in zowel de sport als in de psychologische aspecten van
+                  leerprocessen.
+                </p>
+              </div>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl hover:bg-surface-bright transition-colors">
+              <span class="material-symbols-outlined text-secondary-fixed-dim mb-4 text-4xl"
+                >inventory</span
+              >
+              <h4 class="font-headline-lg text-headline-lg mb-2">High-End Gear</h4>
+              <p class="font-body-md text-on-surface-variant">
+                Het nieuwste materiaal van topmerken voor maximale controle.
+              </p>
+            </div>
+            <div class="bg-primary p-8 rounded-2xl flex flex-col justify-between">
+              <span class="material-symbols-outlined text-on-primary text-4xl">emergency</span>
+              <div>
+                <h4 class="font-headline-lg text-on-primary-container mb-2">Safety First</h4>
+                <p class="font-body-md text-on-primary-container">
+                  Protocol gestuurde veiligheid op en rond het water.
+                </p>
+              </div>
+            </div>
+            <div
+              class="md:col-span-3 glass-panel p-8 rounded-2xl flex items-center justify-between group cursor-pointer hover:border-primary/50 transition-all"
+            >
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-16 h-16 rounded-full bg-secondary-fixed-dim/20 flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-secondary-fixed-dim"
+                    >location_on</span
+                  >
+                </div>
+                <div>
+                  <h4 class="font-headline-lg text-headline-lg">Onze Locaties</h4>
+                  <p class="font-body-md text-on-surface-variant">
+                    Ontdek de beste spots voor jouw niveau.
+                  </p>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform"
+                >east</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-24 relative overflow-hidden">
+        <div
+          class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center"
+        >
+          <div
+            class="glass-panel py-20 px-8 rounded-3xl max-w-4xl mx-auto border-secondary-fixed-dim/20"
+          >
+            <h2 class="font-display-xl text-[40px] md:text-display-xl mb-8">
+              Klaar om te <span class="text-secondary-fixed-dim">Vliegen?</span>
+            </h2>
+            <p class="font-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">
+              Of je nu een beginner bent of je skills wilt perfectioneren, wij hebben een traject
+              dat bij jouw ambities past.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+              <button
+                class="bg-primary text-on-primary font-label-md px-10 py-5 rounded-lg text-[18px] hover:scale-105 transition-transform"
+              >
+                Boek Je Eerste Les
+              </button>
+              <button
+                class="border border-outline-variant text-on-surface font-label-md px-10 py-5 rounded-lg text-[18px] hover:bg-white/5 transition-colors"
+              >
+                Bekijk Programma's
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/10"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter max-w-container-max mx-auto gap-8"
+      >
+        <div class="flex flex-col items-center md:items-start gap-4">
+          <span class="font-display-xl text-[32px] text-on-surface font-extrabold tracking-tighter"
+            >Talent2Empower</span
+          >
+          <p class="font-label-md text-on-surface-variant text-center md:text-left">
+            © 2024 Talent2Empower. All rights reserved.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+          <a
+            class="font-label-md text-label-md text-on-surface-variant hover:text-secondary-container transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-label-md text-label-md text-on-surface-variant hover:text-secondary-container transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="font-label-md text-label-md text-on-surface-variant hover:text-secondary-container transition-colors"
+            href="#"
+            >Contact</a
+          >
+          <a
+            class="font-label-md text-label-md text-on-surface-variant hover:text-secondary-container transition-colors"
+            href="#"
+            >FAQ</a
+          >
+        </div>
+        <div class="flex gap-4">
+          <a
+            class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined">share</span>
+          </a>
+          <a
+            class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined">mail</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Simple scroll interaction for navbar
+      window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+          nav.classList.add('py-2', 'bg-surface/95');
+          nav.classList.remove('py-4', 'bg-surface/80');
+        } else {
+          nav.classList.add('py-4', 'bg-surface/80');
+          nav.classList.remove('py-2', 'bg-surface/95');
+        }
+      });
+
+      // Hover effects for the hero parallax-ish feel
+      document.addEventListener('mousemove', (e) => {
+        const heroImg = document.querySelector('section img');
+        if (heroImg) {
+          const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+          const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+          heroImg.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
+        }
+      });
+    </script>
+  </body>
+</html>
