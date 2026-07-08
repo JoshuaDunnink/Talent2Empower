@@ -16,12 +16,12 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
 >
   <!-- Hero Section -->
   <section
-    class="relative min-h-[90vh] flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop bg-surface-cream pt-24"
+    class="relative min-h-[90vh] flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop pt-24"
   >
     <div class="max-w-container-max mx-auto grid md:grid-cols-12 gap-12 items-center">
-      <div class="md:col-span-6 z-10 space-y-stack-md">
+      <div class="md:col-span-6 z-10 space-y-stack-md reveal">
         <div
-          class="inline-flex items-center gap-2 px-3 py-1 bg-primary-fixed rounded-full text-on-primary-fixed-variant font-label-md"
+          class="inline-flex items-center gap-2 px-3 py-1 glass-panel rounded-full text-secondary-fixed-dim font-label-md"
         >
           <span
             class="material-symbols-outlined text-[18px]"
@@ -45,14 +45,17 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
             href="/contact">Plan een kennismaking</a
           >
           <a
-            class="px-8 py-4 border-2 border-outline-variant text-on-surface rounded-lg font-label-md hover:bg-white/50 transition-all"
+            class="px-8 py-4 glass-panel text-on-surface rounded-lg font-label-md hover:bg-white/10 transition-all"
             href="#wat-wij-doen">Bekijk onze oplossingen</a
           >
         </div>
       </div>
-      <div class="md:col-span-6 relative h-[400px] md:h-[600px]">
+      <div
+        class="md:col-span-6 relative h-[400px] md:h-[600px] reveal"
+        style="transition-delay: 150ms;"
+      >
         <div
-          class="absolute inset-0 bg-accent-warm/30 rounded-full scale-125 blur-3xl opacity-30 -z-10"
+          class="absolute inset-0 bg-primary/20 rounded-full scale-125 blur-3xl opacity-40 -z-10"
         >
         </div>
         <Image
@@ -61,23 +64,21 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
           class="w-full h-full object-contain drop-shadow-2xl"
           loading="eager"
         />
-        <div class="absolute bottom-10 -left-10 bg-white p-6 rounded-xl shadow-xl hidden md:block">
+        <div class="absolute bottom-10 -left-10 glass-panel p-6 rounded-xl hidden md:block">
           <div class="flex items-center gap-4">
-            <div
-              class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center"
-            >
-              <span class="material-symbols-outlined text-on-secondary-container">verified</span>
+            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary">verified</span>
             </div>
             <div>
-              <p class="font-label-md text-on-surface">Bewezen impact</p>
-              <p class="text-caption text-on-surface-variant">Specialistische expertise</p>
+              <p class="font-label-md text-on-surface">Specialistische expertise</p>
+              <p class="text-caption text-on-surface-variant">100% maatwerk</p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 text-on-surface"
     >
       <span class="text-caption font-label-md uppercase tracking-widest">Scroll</span>
       <span class="material-symbols-outlined animate-bounce">expand_more</span>
@@ -86,7 +87,7 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
 
   <!-- Wat Wij Doen -->
   <section
-    class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-white"
+    class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface"
     id="wat-wij-doen"
   >
     <div class="max-w-container-max mx-auto">
@@ -100,7 +101,7 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
       <div class="grid md:grid-cols-3 gap-gutter">
         <!-- Peergroepen -->
         <div
-          class="group bg-surface-cream p-base rounded-xl reveal shadow-sm hover:shadow-xl transition-all duration-300"
+          class="group glass-panel kinetic-hover p-base rounded-2xl reveal transition-all duration-300"
         >
           <div class="aspect-[1.29] rounded-lg overflow-hidden mb-6">
             <Image
@@ -125,7 +126,7 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
         </div>
         <!-- Begeleiding -->
         <div
-          class="group bg-surface-cream p-base rounded-xl reveal shadow-sm hover:shadow-xl transition-all duration-300"
+          class="group glass-panel kinetic-hover p-base rounded-2xl reveal transition-all duration-300"
           style="transition-delay: 100ms;"
         >
           <div class="aspect-[1.29] rounded-lg overflow-hidden mb-6">
@@ -151,7 +152,7 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
         </div>
         <!-- Organisatiegroei -->
         <div
-          class="group bg-surface-cream p-base rounded-xl reveal shadow-sm hover:shadow-xl transition-all duration-300"
+          class="group glass-panel kinetic-hover p-base rounded-2xl reveal transition-all duration-300"
           style="transition-delay: 200ms;"
         >
           <div class="aspect-[1.29] rounded-lg overflow-hidden mb-6">
@@ -181,23 +182,23 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
 
   <!-- CoFun Section (Featured Product for Schools) -->
   <section
-    class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-tertiary text-on-tertiary overflow-hidden"
+    class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-y border-primary/20 overflow-hidden"
     id="cofun"
   >
     <div class="max-w-container-max mx-auto">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div class="space-y-6 reveal">
           <div
-            class="inline-block px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg font-label-md uppercase tracking-wider text-xs"
+            class="inline-block px-4 py-1 bg-primary/20 text-primary rounded-lg font-label-md uppercase tracking-wider text-xs"
           >
             Flagship Product
           </div>
           <h2
-            class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg"
+            class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface"
           >
-            Spelend beter leren met <span class="text-tertiary-fixed">CoFun</span>
+            Spelend beter leren met <span class="text-primary">CoFun</span>
           </h2>
-          <p class="font-body-lg text-body-lg opacity-90">
+          <p class="font-body-lg text-body-lg text-on-surface-variant">
             CoFun is hét lespakket om de executieve functies van kinderen te ontwikkelen door in te
             zetten op de cognitieve functies. Wij geven scholen de controle terug over de
             ontwikkeling van hoogbegaafde leerlingen die vastlopen.
@@ -205,32 +206,38 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
           <div class="space-y-4 pt-4">
             <div class="flex items-start gap-4">
               <div
-                class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0"
+                class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0"
               >
                 <span class="material-symbols-outlined text-[18px]">psychology</span>
               </div>
-              <p class="font-body-md">Inzicht in denkprocessen door observatie en reflectie.</p>
+              <p class="font-body-md text-on-surface-variant">
+                Inzicht in denkprocessen door observatie en reflectie.
+              </p>
             </div>
             <div class="flex items-start gap-4">
               <div
-                class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0"
+                class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0"
               >
                 <span class="material-symbols-outlined text-[18px]">sports_esports</span>
               </div>
-              <p class="font-body-md">Spelend leren: Kinderen leren het best door te doen.</p>
+              <p class="font-body-md text-on-surface-variant">
+                Spelend leren: Kinderen leren het best door te doen.
+              </p>
             </div>
             <div class="flex items-start gap-4">
               <div
-                class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0"
+                class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0"
               >
                 <span class="material-symbols-outlined text-[18px]">trending_up</span>
               </div>
-              <p class="font-body-md">Groei van binnenuit door basisfuncties te versterken.</p>
+              <p class="font-body-md text-on-surface-variant">
+                Groei van binnenuit door basisfuncties te versterken.
+              </p>
             </div>
           </div>
           <div class="pt-8">
             <a
-              class="px-8 py-4 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg font-label-md shadow-xl hover:scale-105 transition-transform inline-block"
+              class="px-8 py-4 bg-primary text-on-primary rounded-lg font-label-md shadow-xl hover:scale-105 transition-transform inline-block"
               href="https://www.cofun.nl"
               target="_blank"
               rel="noopener">Ontdek CoFun voor uw school</a
@@ -238,14 +245,14 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
           </div>
         </div>
         <div class="relative reveal" style="transition-delay: 200ms;">
-          <div class="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl -z-10"></div>
+          <div class="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl -z-10"></div>
           <Image
             src={klasImg}
             alt="CoFun in de klas"
             class="rounded-2xl shadow-2xl w-full object-cover aspect-video md:aspect-auto"
           />
           <div
-            class="absolute -bottom-6 -right-6 p-6 bg-surface-white rounded-xl shadow-xl max-w-[200px] hidden lg:block"
+            class="absolute -bottom-6 -right-6 p-6 glass-panel rounded-xl max-w-[200px] hidden lg:block"
           >
             <p class="text-primary font-bold text-headline-sm mb-1">Cofun.nl</p>
             <p class="text-caption text-on-surface-variant">
@@ -259,7 +266,7 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
 
   <!-- Voor Wie Section (Asymmetric Bento) -->
   <section
-    class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-cream overflow-hidden"
+    class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden"
     id="voor-wie"
   >
     <div class="max-w-container-max mx-auto">
@@ -282,10 +289,10 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
         </div>
         <div class="md:col-span-7 grid gap-6">
           <!-- Ouders -->
-          <div class="p-8 bg-white rounded-2xl shadow-sm reveal border-l-4 border-primary">
+          <div class="p-8 glass-panel kinetic-hover rounded-2xl reveal border-l-4 border-primary">
             <div class="flex items-start gap-6">
               <div
-                class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center shrink-0"
+                class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0"
               >
                 <span class="material-symbols-outlined text-primary">spa</span>
               </div>
@@ -307,12 +314,12 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
           </div>
           <!-- Scholen -->
           <div
-            class="p-8 bg-white rounded-2xl shadow-sm reveal border-l-4 border-tertiary"
+            class="p-8 glass-panel kinetic-hover rounded-2xl reveal border-l-4 border-tertiary"
             style="transition-delay: 100ms;"
           >
             <div class="flex items-start gap-6">
               <div
-                class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0"
+                class="w-12 h-12 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center shrink-0"
               >
                 <span class="material-symbols-outlined text-tertiary">settings_suggest</span>
               </div>
@@ -333,14 +340,15 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
           </div>
           <!-- Sportverenigingen -->
           <div
-            class="p-8 bg-white rounded-2xl shadow-sm reveal border-l-4 border-secondary"
+            class="p-8 glass-panel kinetic-hover rounded-2xl reveal border-l-4 border-secondary-fixed-dim"
             style="transition-delay: 200ms;"
           >
             <div class="flex items-start gap-6">
               <div
-                class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center shrink-0"
+                class="w-12 h-12 rounded-lg bg-secondary-fixed-dim/20 text-secondary-fixed-dim flex items-center justify-center shrink-0"
               >
-                <span class="material-symbols-outlined text-secondary">military_tech</span>
+                <span class="material-symbols-outlined text-secondary-fixed-dim">military_tech</span
+                >
               </div>
               <div>
                 <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">
@@ -352,7 +360,7 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
                   prestaties.
                 </p>
                 <a
-                  class="text-secondary font-label-md hover:underline decoration-2"
+                  class="text-secondary-fixed-dim font-label-md hover:underline decoration-2"
                   href="/voor-sportverenigingen">Professionaliseer uw vereniging →</a
                 >
               </div>
@@ -364,7 +372,7 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
   </section>
 
   <!-- Over Ons -->
-  <section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-white" id="over-ons">
+  <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface" id="over-ons">
     <div class="max-w-container-max mx-auto">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div class="order-2 md:order-1 reveal">
@@ -377,13 +385,13 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
             transformeren uitdagingen in kansen voor zowel het individu als de organisatie.
           </p>
           <div class="grid sm:grid-cols-2 gap-6 pt-4">
-            <div class="p-6 bg-surface-cream rounded-xl">
+            <div class="p-6 glass-panel rounded-xl">
               <h4 class="font-headline-sm text-primary mb-2">Missie</h4>
               <p class="text-caption text-on-surface-variant">
                 Het fundament versterken voor duurzame groei en blijvende rust.
               </p>
             </div>
-            <div class="p-6 bg-surface-cream rounded-xl">
+            <div class="p-6 glass-panel rounded-xl">
               <h4 class="font-headline-sm text-primary mb-2">Visie</h4>
               <p class="text-caption text-on-surface-variant">
                 Een landschap waarin elke school en sportclub de tools heeft om talent te empoweren.
@@ -402,7 +410,7 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
   </section>
 
   <!-- CTA -->
-  <section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-pattern">
+  <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-pattern">
     <div class="max-w-container-max mx-auto">
       <div
         class="bg-primary text-on-primary rounded-3xl shadow-2xl p-12 md:p-16 text-center reveal"
@@ -414,7 +422,7 @@ import overOnsImg from '../assets/images/section-over-ons.jpg';
         </p>
         <a
           href="/contact"
-          class="inline-block px-10 py-4 bg-white text-primary rounded-lg font-label-md font-bold shadow-xl hover:scale-105 transition-transform"
+          class="inline-block px-10 py-4 bg-on-primary text-primary rounded-lg font-label-md font-bold shadow-xl hover:scale-105 transition-transform"
         >
           Neem contact op
         </a>

@@ -13,18 +13,26 @@ interface Props {
 const { photos, class: className } = Astro.props;
 ---
 
-<div class:list={['relative', className]} data-carousel>
+<div
+  class:list={['relative group', className]}
+  data-carousel
+  role="region"
+  aria-roledescription="carrousel"
+  aria-label="Portfolio foto's"
+>
   <div
-    data-track
-    tabindex="0"
-    role="region"
-    aria-roledescription="carrousel"
-    aria-label="Portfolio foto's"
-    class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar rounded-xl focus-visible:outline-2 focus-visible:outline-primary"
+    class="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[300px] overflow-hidden rounded-xl"
   >
     {
       photos.map((p, i) => (
-        <figure class="snap-center shrink-0 w-full relative aspect-[21/9] min-h-[300px]">
+        <figure
+          data-slide
+          class:list={[
+            'absolute inset-0 transition-opacity duration-[1200ms] ease-out',
+            i === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0',
+          ]}
+          aria-hidden={i === 0 ? 'false' : 'true'}
+        >
           <img
             src={p.src}
             width={p.width}
@@ -32,33 +40,41 @@ const { photos, class: className } = Astro.props;
             alt={p.alt}
             loading={i === 0 ? 'eager' : 'lazy'}
             decoding="async"
-            class="w-full h-full object-cover"
+            class="kb w-full h-full object-cover"
           />
-          <figcaption class="absolute bottom-8 left-8">
-            <span class="bg-black/60 backdrop-blur-md px-4 py-2 text-label-sm font-label-sm uppercase text-white rounded">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10" />
+          <figcaption class="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8">
+            <span class="inline-block bg-black/50 backdrop-blur-md px-4 py-2 text-label-sm font-label-sm uppercase tracking-widest text-white rounded">
               {p.alt}
             </span>
           </figcaption>
         </figure>
       ))
     }
-  </div>
-  <div
-    class="absolute inset-0 pointer-events-none border-[12px] border-surface-container-lowest/50 rounded-xl"
-  >
+
+    {/* progress bar */}
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/10 z-20">
+      <div data-progress class="h-full w-0 bg-primary/80"></div>
+    </div>
+
+    {/* frame accent */}
+    <div
+      class="absolute inset-0 pointer-events-none border-[10px] md:border-[12px] border-surface-container-lowest/40 rounded-xl z-20"
+    >
+    </div>
   </div>
 
   <button
     data-prev
     aria-label="Vorige foto"
-    class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center glass-panel rounded-full hover:bg-primary/20 transition-all text-on-surface"
+    class="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 md:w-12 md:h-12 flex items-center justify-center glass-panel rounded-full text-on-surface opacity-70 md:opacity-0 md:group-hover:opacity-100 hover:bg-primary/20 transition-all duration-300"
   >
     <span class="material-symbols-outlined">arrow_back</span>
   </button>
   <button
     data-next
     aria-label="Volgende foto"
-    class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center glass-panel rounded-full hover:bg-primary/20 transition-all text-on-surface"
+    class="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 md:w-12 md:h-12 flex items-center justify-center glass-panel rounded-full text-on-surface opacity-70 md:opacity-0 md:group-hover:opacity-100 hover:bg-primary/20 transition-all duration-300"
   >
     <span class="material-symbols-outlined">arrow_forward</span>
   </button>
@@ -70,60 +86,142 @@ const { photos, class: className } = Astro.props;
           data-dot
           data-index={i}
           aria-label={`Ga naar foto ${i + 1}`}
-          class="w-2.5 h-2.5 rounded-full bg-outline-variant transition-colors"
+          class="h-2.5 rounded-full transition-all duration-300 bg-outline-variant"
         />
       ))
     }
   </div>
 </div>
 
+<style>
+  /* Slow Ken Burns drift on the active slide only */
+  [data-slide] .kb {
+    transform: scale(1);
+    transition: transform 6s ease-out;
+  }
+  [data-slide].is-active .kb {
+    transform: scale(1.08);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-slide] {
+      transition-duration: 200ms;
+    }
+    [data-slide] .kb,
+    [data-slide].is-active .kb {
+      transform: none;
+      transition: none;
+    }
+    [data-progress] {
+      display: none;
+    }
+  }
+</style>
+
 <script>
+  const INTERVAL = 5500;
+
   document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
-    const track = root.querySelector<HTMLElement>('[data-track]');
-    if (!track) return;
-    const slides = [...track.children] as HTMLElement[];
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-slide]')];
     const dots = [...root.querySelectorAll<HTMLElement>('[data-dot]')];
+    const progress = root.querySelector<HTMLElement>('[data-progress]');
+    if (slides.length === 0) return;
 
-    const scrollBySlide = (dir: number) => {
-      track.scrollBy({ left: dir * track.clientWidth, behavior: 'smooth' });
-    };
-    root.querySelector('[data-prev]')?.addEventListener('click', () => scrollBySlide(-1));
-    root.querySelector('[data-next]')?.addEventListener('click', () => scrollBySlide(1));
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
+    let progressStart = 0;
+    let raf = 0;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const i = Number(dot.dataset.index);
-        slides[i]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    function show(next: number) {
+      next = (next + slides.length) % slides.length;
+      slides.forEach((s, i) => {
+        const active = i === next;
+        s.style.opacity = active ? '1' : '0';
+        s.style.zIndex = active ? '10' : '0';
+        s.classList.toggle('is-active', active);
+        s.setAttribute('aria-hidden', active ? 'false' : 'true');
       });
+      dots.forEach((d, i) => {
+        const active = i === next;
+        d.classList.toggle('bg-primary', active);
+        d.classList.toggle('w-6', active);
+        d.classList.toggle('bg-outline-variant', !active);
+        d.classList.toggle('w-2.5', !active);
+      });
+      current = next;
+    }
+
+    function tickProgress(now: number) {
+      if (!progress || reduce) return;
+      const elapsed = now - progressStart;
+      progress.style.width = Math.min(100, (elapsed / INTERVAL) * 100) + '%';
+      raf = requestAnimationFrame(tickProgress);
+    }
+
+    function start() {
+      if (slides.length < 2) return;
+      stop();
+      progressStart = performance.now();
+      if (!reduce) raf = requestAnimationFrame(tickProgress);
+      timer = setInterval(() => show(current + 1), INTERVAL);
+    }
+    function stop() {
+      if (timer) clearInterval(timer);
+      cancelAnimationFrame(raf);
+      timer = null;
+      if (progress) progress.style.width = '0%';
+    }
+    root.querySelector('[data-prev]')?.addEventListener('click', () => {
+      show(current - 1);
+      start();
+    });
+    root.querySelector('[data-next]')?.addEventListener('click', () => {
+      show(current + 1);
+      start();
+    });
+    dots.forEach((dot) =>
+      dot.addEventListener('click', () => {
+        show(Number(dot.dataset.index));
+        start();
+      })
+    );
+
+    // Pause on hover / focus / tab hidden
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+
+    // Touch swipe
+    let x0: number | null = null;
+    root.addEventListener('pointerdown', (e) => (x0 = e.clientX));
+    root.addEventListener('pointerup', (e) => {
+      if (x0 === null) return;
+      const dx = e.clientX - x0;
+      if (Math.abs(dx) > 40) {
+        show(dx < 0 ? current + 1 : current - 1);
+        start();
+      }
+      x0 = null;
     });
 
-    const setActive = (index: number) => {
-      dots.forEach((d, i) => {
-        d.classList.toggle('bg-primary', i === index);
-        d.classList.toggle('bg-outline-variant', i !== index);
-      });
-    };
-    setActive(0);
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(slides.indexOf(entry.target as HTMLElement));
-        });
-      },
-      { root: track, threshold: 0.6 }
-    );
-    slides.forEach((s) => io.observe(s));
-
-    track.addEventListener('keydown', (e) => {
+    // Keyboard
+    root.tabIndex = 0;
+    root.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        scrollBySlide(-1);
+        show(current - 1);
+        start();
       }
       if (e.key === 'ArrowRight') {
         e.preventDefault();
-        scrollBySlide(1);
+        show(current + 1);
+        start();
       }
     });
+
+    show(0);
+    start();
   });
 </script>

@@ -5,9 +5,12 @@
    places every utility in `@layer utilities`. Any UNLAYERED rule here would beat
    those utilities in the cascade. So base element defaults live in `@layer base`
    (lower priority than utilities), and only true component helpers are unlayered.
+
+   The whole site uses the DARK sub-brand (navy/blue, glassmorphism) — the look
+   of the Watersport & Turn Fotografie pages. Tokens live in theme.css.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
 @import './theme.css';
 
 /* ── Base defaults (utilities always override these) ─────────────────────── */
@@ -20,11 +23,11 @@
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-surface-dim);
   }
 
-  /* Sensible default heading font so any heading without an explicit
-     font-* utility still renders in Epilogue. Size/weight/color come from
-     the utility classes used on each element. */
+  /* Default heading font so any heading without an explicit font-* utility
+     still renders in Anybody. Size/weight/color come from utility classes. */
   h1,
   h2,
   h3,
@@ -44,28 +47,28 @@
     'opsz' 24;
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
+/* Glassmorphism panel — primary surface treatment across the site */
+.glass-card,
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(174, 198, 255, 0.1);
 }
 
-/* Home + scholen hero: left-to-right gradient so text stays legible on the left */
+/* Hero image overlays — dark navy so hero text stays legible */
 .hero-gradient {
   background: linear-gradient(
     to right,
-    rgba(28, 27, 27, 0.75) 0%,
-    rgba(28, 27, 27, 0.3) 60%,
-    rgba(28, 27, 27, 0) 100%
+    rgba(10, 12, 16, 0.85) 0%,
+    rgba(10, 12, 16, 0.4) 60%,
+    rgba(10, 12, 16, 0) 100%
   );
 }
-
-/* Sportverenigingen hero: top-to-bottom dark overlay for the full-bleed athlete image */
 .hero-gradient-sports {
-  background: linear-gradient(rgba(28, 27, 27, 0.6), rgba(28, 27, 27, 0.88));
+  background: linear-gradient(rgba(10, 12, 16, 0.6), rgba(10, 12, 16, 0.9));
 }
 
-/* Subtle dot grid used on /cofun */
+/* Subtle dot grid background accent */
 .bg-pattern {
   background-image: radial-gradient(
     circle at 2px 2px,
@@ -75,20 +78,20 @@
   background-size: 40px 40px;
 }
 
-/* Bento card hover lift */
-.bento-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Card hover lifts */
+.bento-card,
+.kinetic-hover {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.bento-card:hover {
+.bento-card:hover,
+.kinetic-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -10px color-mix(in srgb, var(--color-primary) 12%, transparent);
 }
 
 .ambient-shadow {
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--color-primary) 6%, transparent);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Small card hover lift */
 .card-hover {
   transition:
     transform 0.3s ease,
@@ -96,7 +99,31 @@
 }
 .card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(174, 198, 255, 0.3);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
 }
 
 /* Scroll-reveal helper (JS toggles `.visible`) */
@@ -110,131 +137,4 @@
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ==========================================================================
-   Dark sub-brand theme for /turn-fotografie and /watersport.
-   BaseLayout puts `theme-dark` on <body>; every token utility reads these
-   vars at use-site, so Header/Footer and page content adapt automatically.
-   Palette/typography come from the approved Stitch screens (blue-on-dark,
-   Anybody + Hanken Grotesk + JetBrains Mono).
-   ========================================================================== */
-.theme-dark {
-  --color-primary: #aec6ff;
-  --color-on-primary: #002e6a;
-  --color-primary-container: #4f8eff;
-  --color-on-primary-container: #00275e;
-  --color-primary-fixed: #d8e2ff;
-  --color-primary-fixed-dim: #aec6ff;
-  --color-on-primary-fixed: #001a42;
-  --color-on-primary-fixed-variant: #004396;
-  --color-inverse-primary: #005ac4;
-  --color-secondary: #ddfcff;
-  --color-on-secondary: #00363a;
-  --color-secondary-container: #00f1fe;
-  --color-on-secondary-container: #006a70;
-  --color-secondary-fixed: #74f5ff;
-  --color-secondary-fixed-dim: #00dbe7;
-  --color-on-secondary-fixed: #002022;
-  --color-on-secondary-fixed-variant: #004f54;
-  --color-tertiary: #ffb4a2;
-  --color-on-tertiary: #621100;
-  --color-tertiary-container: #ff562c;
-  --color-on-tertiary-container: #560e00;
-  --color-tertiary-fixed: #ffdad2;
-  --color-tertiary-fixed-dim: #ffb4a2;
-  --color-on-tertiary-fixed: #3c0700;
-  --color-on-tertiary-fixed-variant: #8a1d00;
-  --color-error: #ffb4ab;
-  --color-on-error: #690005;
-  --color-error-container: #93000a;
-  --color-on-error-container: #ffdad6;
-  --color-surface: #111318;
-  --color-surface-dim: #0a0c10;
-  --color-surface-bright: #37393e;
-  --color-surface-container-lowest: #0c0e12;
-  --color-surface-container-low: #1a1c20;
-  --color-surface-container: #1e2024;
-  --color-surface-container-high: #282a2e;
-  --color-surface-container-highest: #333539;
-  --color-surface-variant: #333539;
-  --color-on-surface: #e2e2e8;
-  --color-on-surface-variant: #c1c6d7;
-  --color-inverse-surface: #e2e2e8;
-  --color-inverse-on-surface: #2f3035;
-  --color-outline: #8b90a1;
-  --color-outline-variant: #414755;
-  --color-surface-tint: #aec6ff;
-  --color-background: #111318;
-  --color-on-background: #e2e2e8;
-
-  --font-display-xl: 'Anybody', sans-serif;
-  --font-display-lg: 'Anybody', sans-serif;
-  --font-headline-xl: 'Anybody', sans-serif;
-  --font-headline-lg: 'Anybody', sans-serif;
-  --font-headline-lg-mobile: 'Anybody', sans-serif;
-  --font-headline-md: 'Anybody', sans-serif;
-  --font-body-lg: 'Hanken Grotesk', sans-serif;
-  --font-body-md: 'Hanken Grotesk', sans-serif;
-  --font-body: 'Hanken Grotesk', sans-serif;
-  --font-label-md: 'JetBrains Mono', monospace;
-  --font-label-sm: 'JetBrains Mono', monospace;
-
-  --text-display-xl: 80px;
-  --text-display-xl--line-height: 88px;
-  --text-display-xl--letter-spacing: -0.04em;
-  --text-display-lg: 64px;
-  --text-display-lg--line-height: 72px;
-  --text-display-lg--letter-spacing: -0.03em;
-  --text-display-lg--font-weight: 800;
-  --text-headline-xl: 48px;
-  --text-headline-xl--line-height: 56px;
-  --text-headline-lg: 32px;
-  --text-headline-lg--line-height: 40px;
-  --text-headline-lg-mobile: 28px;
-  --text-headline-lg-mobile--line-height: 36px;
-  --text-headline-lg-mobile--letter-spacing: -0.01em;
-  --text-label-md--letter-spacing: 0.05em;
-  --text-label-md--font-weight: 500;
-  --text-label-sm--letter-spacing: 0.08em;
-  --text-label-sm--font-weight: 500;
-
-  --spacing-container-max: 1440px;
-
-  background-color: var(--color-surface-dim);
-  color: var(--color-on-background);
-}
-
-/* Dark-page helpers (from the Stitch screens) */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(174, 198, 255, 0.1);
-}
-.kinetic-hover {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.kinetic-hover:hover {
-  transform: scale(1.02);
-}
-.text-glow {
-  text-shadow: 0 0 20px rgba(174, 198, 255, 0.3);
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-.animate-marquee {
-  animation: marquee 40s linear infinite;
 }

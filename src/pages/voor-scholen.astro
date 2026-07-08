@@ -7,7 +7,7 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
 
 <BaseLayout
   title="Scholen - Krijg de regie terug"
-  description="Structurele ondersteuning en cognitieve ontwikkeling voor scholen die streven naar maximale talentontplooiing zonder de grip op het klasproces te verloren."
+  description="Structurele ondersteuning en cognitieve ontwikkeling voor scholen die streven naar maximale talentontplooiing zonder de grip op het klasproces te verliezen."
 >
   <!-- Hero Section -->
   <section class="relative min-h-[80vh] flex items-center overflow-hidden pt-20">
@@ -15,24 +15,26 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
       <Image
         src={klasImg}
         alt="High performance classroom environment"
-        class="w-full h-full object-cover opacity-90"
+        class="w-full h-full object-cover opacity-60"
         loading="eager"
         widths={[768, 1280, 1920]}
         sizes="100vw"
       />
       <div
-        class="absolute inset-0 bg-gradient-to-r from-surface-bright via-surface-bright/80 to-transparent"
+        class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"
       >
       </div>
     </div>
-    <div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto">
-      <div class="max-w-2xl">
+    <div
+      class="relative z-10 w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
+    >
+      <div class="max-w-2xl reveal">
         <span
-          class="inline-block font-label-sm text-label-sm bg-primary-container text-on-primary-container px-3 py-1 rounded mb-6"
-          >VOOR ONDERWIJSPROFESSIONALS</span
+          class="inline-block font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim mb-6"
+          >Voor onderwijsprofessionals</span
         >
         <h1
-          class="font-headline-lg text-headline-lg md:text-display-lg md:leading-[1.1] text-on-background mb-6"
+          class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 leading-tight"
         >
           Krijg de regie terug over de groei van <span class="text-primary italic"
             >hoogbegaafde</span
@@ -42,51 +44,57 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
           Structurele ondersteuning en cognitieve ontwikkeling voor scholen die streven naar
           maximale talentontplooiing zonder de grip op het klasproces te verliezen.
         </p>
-        <div class="flex flex-wrap gap-4">
-          <button
-            class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-body-md font-bold shadow-lg hover:shadow-xl transition-all"
+        <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+          <a
+            href="/cofun"
+            class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md hover:scale-105 transition-transform text-center"
           >
             Ontdek CoFun Programma
-          </button>
-          <button
-            class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-body-md font-bold hover:bg-primary/5 transition-all"
+          </a>
+          <a
+            href="/contact"
+            class="glass-panel text-on-surface px-8 py-4 rounded-lg font-label-md hover:bg-white/10 transition-colors text-center"
           >
             Maak een afspraak
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </section>
   <!-- Value Proposition / Bento Grid -->
-  <section class="py-24 bg-surface px-margin-desktop">
+  <section class="py-16 md:py-24 bg-surface px-margin-mobile md:px-margin-desktop">
     <div class="max-w-container-max mx-auto">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal">
         <div class="max-w-xl">
-          <h2 class="font-headline-lg text-headline-lg text-on-background mb-4">
+          <h2
+            class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-4"
+          >
             Controle door Inzicht &amp; Structuur
           </h2>
           <p class="font-body-md text-body-md text-on-surface-variant">
-            Wij bieden scholen de tools om meer- en hoogbegaafde leerlingen niet alleen te 'bezig te
+            Wij bieden scholen de tools om meer- en hoogbegaafde leerlingen niet alleen 'bezig te
             houden', maar ze daadwerkelijk te laten groeien middels wetenschappelijke kaders.
           </p>
         </div>
-        <div class="font-label-md text-label-md text-primary flex items-center gap-2">
+        <div
+          class="font-label-md text-label-md text-secondary-fixed-dim flex items-center gap-2 uppercase tracking-widest"
+        >
           <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;"
             >analytics</span
           >
-          WETENSCHAPPELIJK ONDERBOUWD
+          Wetenschappelijk onderbouwd
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
         <!-- Feature 1: CoFun -->
         <div
-          class="md:col-span-8 bg-surface-container-low p-10 rounded-xl bento-card border border-outline-variant flex flex-col justify-between"
+          class="md:col-span-8 glass-panel kinetic-hover p-10 rounded-2xl flex flex-col justify-between reveal"
         >
           <div>
             <div class="w-12 h-12 bg-primary flex items-center justify-center rounded-lg mb-6">
-              <span class="material-symbols-outlined text-white">psychology</span>
+              <span class="material-symbols-outlined text-on-primary">psychology</span>
             </div>
-            <h3 class="font-headline-md text-headline-md mb-4 text-on-background">
+            <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">
               CoFun: Focus op Cognitieve Functies
             </h3>
             <p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
@@ -95,60 +103,61 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
             </p>
           </div>
           <div
-            class="mt-8 pt-8 border-t border-outline-variant/30 grid grid-cols-2 md:grid-cols-3 gap-6"
+            class="mt-8 pt-8 border-t border-outline-variant/40 grid grid-cols-2 md:grid-cols-3 gap-6"
           >
             <div>
-              <div class="font-label-md text-primary mb-1">STAP 01</div>
-              <div class="font-body-md font-bold">Diagnostiek</div>
+              <div class="font-label-sm text-label-sm text-secondary-fixed-dim mb-1">STAP 01</div>
+              <div class="font-body-md font-bold text-on-surface">Diagnostiek</div>
             </div>
             <div>
-              <div class="font-label-md text-primary mb-1">STAP 02</div>
-              <div class="font-body-md font-bold">Interventie</div>
+              <div class="font-label-sm text-label-sm text-secondary-fixed-dim mb-1">STAP 02</div>
+              <div class="font-body-md font-bold text-on-surface">Interventie</div>
             </div>
             <div>
-              <div class="font-label-md text-primary mb-1">STAP 03</div>
-              <div class="font-body-md font-bold">Monitoring</div>
+              <div class="font-label-sm text-label-sm text-secondary-fixed-dim mb-1">STAP 03</div>
+              <div class="font-body-md font-bold text-on-surface">Monitoring</div>
             </div>
           </div>
         </div>
         <!-- Feature 2: Professionalization -->
         <div
-          class="md:col-span-4 bg-on-background text-surface-bright p-10 rounded-xl bento-card flex flex-col justify-between"
+          class="md:col-span-4 bg-primary text-on-primary p-10 rounded-2xl kinetic-hover flex flex-col justify-between reveal"
         >
           <div>
-            <div class="w-12 h-12 bg-secondary flex items-center justify-center rounded-lg mb-6">
-              <span class="material-symbols-outlined text-white">school</span>
+            <div
+              class="w-12 h-12 bg-on-primary/15 flex items-center justify-center rounded-lg mb-6"
+            >
+              <span class="material-symbols-outlined text-on-primary">school</span>
             </div>
             <h3 class="font-headline-md text-headline-md mb-4 leading-tight">
               Professionalisering van Leerkrachten
             </h3>
-            <p class="font-body-md text-body-md text-surface-variant">
+            <p class="font-body-md text-body-md text-on-primary/90">
               Trainingen en workshops die direct toepasbaar zijn in de drukke dagelijkse praktijk.
             </p>
           </div>
           <ul class="space-y-3 mt-8">
-            <li class="flex items-center gap-3 font-label-sm">
-              <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+            <li class="flex items-center gap-3 font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-sm">check_circle</span>
               SIGNALEERVAARDIGHEDEN
             </li>
-            <li class="flex items-center gap-3 font-label-sm">
-              <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+            <li class="flex items-center gap-3 font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-sm">check_circle</span>
               COMPACTEN &amp; VERRIJKEN
             </li>
-            <li class="flex items-center gap-3 font-label-sm">
-              <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+            <li class="flex items-center gap-3 font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-sm">check_circle</span>
               FEEDBACK-MECHANISMEN
             </li>
           </ul>
         </div>
         <!-- Feature 3: Practical Tools -->
-        <div
-          class="md:col-span-4 bg-surface-container-high p-8 rounded-xl bento-card border border-outline-variant"
-        >
-          <span class="material-symbols-outlined text-primary mb-4" style="font-size: 32px;"
-            >construction</span
+        <div class="md:col-span-4 glass-panel kinetic-hover p-8 rounded-2xl reveal">
+          <span
+            class="material-symbols-outlined text-secondary-fixed-dim mb-4"
+            style="font-size: 32px;">construction</span
           >
-          <h4 class="font-headline-md text-headline-md mb-3">Praktische Tools</h4>
+          <h4 class="font-headline-md text-headline-md mb-3 text-on-surface">Praktische Tools</h4>
           <p class="font-body-md text-body-md text-on-surface-variant">
             Geen vage rapporten, maar tastbare materialen die morgen in de klas kunnen worden
             ingezet.
@@ -156,10 +165,12 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
         </div>
         <!-- Feature 4: Scientific Basis -->
         <div
-          class="md:col-span-8 relative overflow-hidden bg-white p-8 rounded-xl bento-card border border-outline-variant flex items-center"
+          class="md:col-span-8 relative overflow-hidden glass-panel kinetic-hover p-8 rounded-2xl flex items-center reveal"
         >
           <div class="relative z-10 md:w-3/5">
-            <h4 class="font-headline-md text-headline-md mb-3">Wetenschappelijk Fundament</h4>
+            <h4 class="font-headline-md text-headline-md mb-3 text-on-surface">
+              Wetenschappelijk Fundament
+            </h4>
             <p class="font-body-md text-body-md text-on-surface-variant">
               Onze methodiek rust op de pijlers van cognitieve psychologie en moderne
               neurobiologische inzichten over het hoogbegaafde brein.
@@ -170,7 +181,7 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
           >
             <span
               class="material-symbols-outlined text-primary"
-              style="font-size: 80px; opacity: 0.2;">science</span
+              style="font-size: 80px; opacity: 0.25;">science</span
             >
           </div>
         </div>
@@ -178,47 +189,54 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
     </div>
   </section>
   <!-- Content Section: The Program -->
-  <section class="py-24 bg-on-background text-surface-bright relative overflow-hidden">
+  <section
+    class="py-16 md:py-24 bg-surface-container-lowest relative overflow-hidden px-margin-mobile md:px-margin-desktop"
+  >
     <div
       class="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[100px] rounded-full -mr-48 -mt-48"
     >
     </div>
     <div
-      class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 blur-[100px] rounded-full -ml-48 -mb-48"
+      class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-fixed-dim/10 blur-[100px] rounded-full -ml-48 -mb-48"
     >
     </div>
     <div
-      class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-20 items-center"
+      class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center relative z-10"
     >
-      <div class="relative">
+      <div class="relative reveal">
         <Image
           src={mentorImg}
           alt="Teacher mentoring a student"
-          class="rounded-2xl shadow-2xl grayscale transition-all duration-700 hover:grayscale-0"
+          class="w-full rounded-2xl ambient-shadow grayscale transition-all duration-700 hover:grayscale-0"
         />
-        <div class="absolute -bottom-6 -right-6 bg-secondary p-8 rounded-xl hidden md:block">
-          <div class="text-4xl font-bold mb-2">94%</div>
-          <div class="text-xs font-label-sm uppercase tracking-wider opacity-80">
-            Effectiviteit Score
+        <div
+          class="absolute -bottom-6 -right-6 glass-panel p-6 rounded-2xl hidden md:block max-w-[200px]"
+        >
+          <span class="material-symbols-outlined text-secondary-fixed-dim text-3xl mb-2">tune</span>
+          <div class="font-headline-md text-headline-md text-on-surface mb-1">100% maatwerk</div>
+          <div class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+            Afgestemd op uw school
           </div>
         </div>
       </div>
-      <div>
-        <h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">
+      <div class="reveal">
+        <h2
+          class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-8 leading-tight"
+        >
           Gestructureerde steun waar het telt.
         </h2>
         <div class="space-y-10">
           <div class="flex gap-6">
             <div
-              class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center font-label-md text-primary"
+              class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center font-label-md text-label-md text-primary"
             >
               01
             </div>
             <div>
-              <h5 class="font-headline-md text-headline-md text-body-lg mb-2">
+              <h5 class="font-headline-md text-headline-md text-on-surface mb-2">
                 Analyse van de huidige aanpak
               </h5>
-              <p class="text-surface-variant font-body-md">
+              <p class="text-on-surface-variant font-body-md text-body-md">
                 We kijken samen naar wat er al staat en waar de blinde vlekken zitten in de
                 signalering en begeleiding.
               </p>
@@ -226,15 +244,15 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
           </div>
           <div class="flex gap-6">
             <div
-              class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center font-label-md text-primary"
+              class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center font-label-md text-label-md text-primary"
             >
               02
             </div>
             <div>
-              <h5 class="font-headline-md text-headline-md text-body-lg mb-2">
+              <h5 class="font-headline-md text-headline-md text-on-surface mb-2">
                 Implementatie van CoFun
               </h5>
-              <p class="text-surface-variant font-body-md">
+              <p class="text-on-surface-variant font-body-md text-body-md">
                 Onze specialisten begeleiden het team bij het inbedden van het programma in het
                 dagelijkse rooster.
               </p>
@@ -242,13 +260,15 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
           </div>
           <div class="flex gap-6">
             <div
-              class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center font-label-md text-primary"
+              class="flex-shrink-0 w-12 h-12 rounded-full border border-primary flex items-center justify-center font-label-md text-label-md text-primary"
             >
               03
             </div>
             <div>
-              <h5 class="font-headline-md text-headline-md text-body-lg mb-2">Duurzame Borging</h5>
-              <p class="text-surface-variant font-body-md">
+              <h5 class="font-headline-md text-headline-md text-on-surface mb-2">
+                Duurzame Borging
+              </h5>
+              <p class="text-on-surface-variant font-body-md text-body-md">
                 Geen eenmalige training, maar doorlopende intervisie om de kwaliteit en de grip te
                 garanderen.
               </p>
@@ -259,16 +279,16 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
     </div>
   </section>
   <!-- CTA Section -->
-  <section class="py-24 bg-surface px-margin-mobile md:px-margin-desktop">
+  <section class="py-16 md:py-24 bg-surface px-margin-mobile md:px-margin-desktop">
     <div
-      class="max-w-container-max mx-auto bg-primary text-white rounded-3xl p-12 md:p-20 relative overflow-hidden"
+      class="max-w-container-max mx-auto bg-primary text-on-primary rounded-3xl p-12 md:p-20 relative overflow-hidden reveal"
     >
       <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
         <div class="max-w-xl text-center md:text-left">
-          <h2 class="font-headline-lg text-headline-lg mb-6">
+          <h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl mb-6">
             Klaar om de regie in de klas te herpakken?
           </h2>
-          <p class="text-lg opacity-90 mb-0">
+          <p class="font-body-lg text-body-lg text-on-primary/90 mb-0">
             Neem vandaag nog contact op voor een vrijblijvend adviesgesprek over de mogelijkheden
             voor uw school.
           </p>
@@ -276,13 +296,13 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
         <div class="flex flex-col gap-4 w-full md:w-auto">
           <a
             href="mailto:info@talent2empower.nl"
-            class="bg-secondary text-white px-10 py-5 rounded-xl font-bold hover:scale-105 transition-transform text-center"
+            class="bg-on-primary text-primary px-10 py-5 rounded-xl font-label-md hover:scale-105 transition-transform text-center"
           >
             Vraag Brochure Aan
           </a>
           <a
             href="/contact"
-            class="bg-white/10 backdrop-blur-sm border border-white/20 px-10 py-5 rounded-xl font-bold hover:bg-white/20 transition-all text-center"
+            class="bg-white/10 backdrop-blur-sm border border-white/20 px-10 py-5 rounded-xl font-label-md hover:bg-white/20 transition-all text-center"
           >
             Praat met een Expert
           </a>
@@ -290,7 +310,7 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
       </div>
       <!-- Abstract graphic element -->
       <div
-        class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-container rounded-full opacity-20 blur-3xl"
+        class="absolute -right-20 -bottom-20 w-80 h-80 bg-on-primary rounded-full opacity-10 blur-3xl"
       >
       </div>
     </div>
@@ -300,18 +320,11 @@ import mentorImg from '../assets/images/voor-scholen-b9105f2d.jpg';
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-8');
-          }
+          if (entry.isIntersecting) entry.target.classList.add('visible');
         });
       },
       { threshold: 0.1 }
     );
-
-    document.querySelectorAll('.bento-card').forEach((card) => {
-      card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
-      observer.observe(card);
-    });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script>
 </BaseLayout>

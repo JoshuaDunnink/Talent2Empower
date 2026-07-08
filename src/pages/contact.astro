@@ -1,23 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
-import nederlandImg from '../assets/images/contact-9b1c0cd6.jpg';
 ---
 
 <BaseLayout
   title="Contact - Talent2Empower"
   description="Neem contact op met Talent2Empower. Wij helpen je graag verder met vragen over ouders, scholen of sportverenigingen."
 >
-  <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-bright">
+  <section class="pt-24 pb-16 md:pb-24 px-margin-mobile md:px-margin-desktop bg-surface-dim">
     <div class="max-w-container-max mx-auto">
       <div
-        class="bg-white rounded-[2rem] shadow-2xl overflow-hidden grid md:grid-cols-2 border border-outline-variant/30"
+        class="glass-panel rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2 border border-outline-variant/40 reveal"
       >
         <!-- Contact Information -->
-        <div class="p-12 bg-primary text-on-primary space-y-12">
+        <div class="p-8 md:p-12 bg-primary text-on-primary space-y-12">
           <div>
-            <h1 class="font-headline-md text-4xl md:text-5xl font-bold mb-6">Zet de eerste stap</h1>
-            <p class="font-body text-xl opacity-90">
+            <span
+              class="inline-block mb-6 font-label-sm text-label-sm uppercase tracking-widest opacity-70"
+              >Contact</span
+            >
+            <h1
+              class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold mb-6 leading-tight"
+            >
+              Zet de eerste stap
+            </h1>
+            <p class="font-body-lg text-body-lg opacity-90">
               Klaar voor meer rust, controle of groei? Laat ons weten hoe we kunnen helpen en we
               nemen binnen 24 uur contact met u op.
             </p>
@@ -26,132 +32,123 @@ import nederlandImg from '../assets/images/contact-9b1c0cd6.jpg';
           <div class="space-y-8">
             <div class="flex items-center gap-6">
               <div
-                class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20"
+                class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20 shrink-0"
               >
                 <span class="material-symbols-outlined text-3xl">mail</span>
               </div>
               <div>
-                <p class="font-label-sm text-xs uppercase tracking-widest opacity-70 mb-1">
+                <p class="font-label-sm text-label-sm uppercase tracking-widest opacity-70 mb-1">
                   Email ons
                 </p>
-                <p class="font-body text-lg font-bold">info@talent2empower.nl</p>
+                <p class="font-body-lg text-body-lg font-bold">info@talent2empower.nl</p>
               </div>
             </div>
 
             <div class="flex items-center gap-6">
               <div
-                class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20"
+                class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20 shrink-0"
               >
                 <span class="material-symbols-outlined text-3xl">location_on</span>
               </div>
               <div>
-                <p class="font-label-sm text-xs uppercase tracking-widest opacity-70 mb-1">
+                <p class="font-label-sm text-label-sm uppercase tracking-widest opacity-70 mb-1">
                   Locatie
                 </p>
-                <p class="font-body text-lg font-bold">Nederland - Werkzaam op locatie</p>
+                <p class="font-body-lg text-body-lg font-bold">Muiderweg 57, Zeewolde</p>
               </div>
             </div>
           </div>
 
           <div class="pt-8">
-            <div
-              class="w-full aspect-video rounded-2xl overflow-hidden grayscale opacity-40 contrast-125 border border-white/10"
-            >
-              <Image
-                src={nederlandImg}
-                alt="Focus op Nederland"
-                class="w-full h-full object-cover"
-              />
+            <div class="w-full aspect-video rounded-2xl overflow-hidden border border-white/20">
+              <iframe
+                title="Locatie Talent2Empower — Muiderweg 57, Zeewolde"
+                src="https://maps.google.com/maps?q=Muiderweg%2057%20Zeewolde&z=15&output=embed"
+                class="w-full h-full"
+                style="border: 0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
             </div>
           </div>
         </div>
 
-        <!-- Contact Form -->
-        <div class="p-12 bg-white">
-          <form class="space-y-8">
-            <div class="grid sm:grid-cols-2 gap-8">
-              <div class="space-y-3">
-                <label
-                  class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant"
-                  >Volledige Naam</label
-                >
-                <input
-                  class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body transition-colors"
-                  placeholder="Uw naam"
-                  required
-                  type="text"
-                />
-              </div>
-              <div class="space-y-3">
-                <label
-                  class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant"
-                  >E-mailadres</label
-                >
-                <input
-                  class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body transition-colors"
-                  placeholder="naam@voorbeeld.nl"
-                  required
-                  type="email"
-                />
-              </div>
-            </div>
-
-            <div class="space-y-3">
-              <label
-                class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant"
-                >Ik ben geïnteresseerd voor:</label
-              >
-              <div class="relative">
-                <select
-                  class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body appearance-none transition-colors"
-                >
-                  <option>Kies een optie</option>
-                  <option>Ouder - Rust voor mijn gezin</option>
-                  <option>School - Controle & CoFun</option>
-                  <option>Sport - Professionalisering</option>
-                  <option>Anders</option>
-                </select>
-                <div
-                  class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-primary"
-                >
-                  <span class="material-symbols-outlined">expand_more</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="space-y-3">
-              <label
-                class="font-label-sm text-xs font-bold uppercase tracking-wider text-on-surface-variant"
-                >Uw Bericht</label
-              >
-              <textarea
-                class="w-full px-5 py-4 rounded-xl border-2 border-surface-container-high focus:outline-none focus:border-primary bg-surface/50 font-body transition-colors"
-                placeholder="Hoe kunnen we uw situatie verbeteren?"
-                rows="5"
-                required></textarea>
-            </div>
-
-            <button
-              class="w-full py-5 bg-secondary text-on-secondary rounded-xl font-body font-bold text-lg hover:bg-secondary-container transition-all shadow-xl shadow-secondary/20 active:scale-[0.98]"
-              type="submit"
-            >
-              Bericht Verzenden
-            </button>
-          </form>
-
-          <div
-            class="mt-10 pt-10 border-t border-outline-variant/30 flex items-center gap-6 justify-center"
+        <!-- Email CTA (no form/backend — direct contact only) -->
+        <div class="p-8 md:p-12 glass-panel flex flex-col justify-center">
+          <span
+            class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim mb-4"
+            >Direct contact</span
           >
-            <div class="flex items-center gap-3 grayscale opacity-60">
-              <span class="material-symbols-outlined text-primary">verified</span>
-              <span class="font-label-sm text-[10px] font-bold uppercase tracking-tighter"
-                >Bewezen Impact</span
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">
+            Stuur ons een bericht
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+            Vertel ons kort over uw situatie en waar u naar op zoek bent. We reageren doorgaans
+            binnen 24 uur. Kies hieronder uw onderwerp — of mail ons rechtstreeks.
+          </p>
+
+          <div class="space-y-3 mb-8">
+            {
+              [
+                {
+                  label: 'Ouder — Rust voor mijn gezin',
+                  subject: 'Aanvraag: Rust voor mijn gezin',
+                },
+                { label: 'School — Controle & CoFun', subject: 'Aanvraag: School & CoFun' },
+                {
+                  label: 'Sport — Professionalisering',
+                  subject: 'Aanvraag: Professionalisering sportvereniging',
+                },
+                { label: 'Turn Fotografie', subject: 'Aanvraag: Turn Fotografie' },
+              ].map((o) => (
+                <a
+                  href={`mailto:info@talent2empower.nl?subject=${encodeURIComponent(o.subject)}`}
+                  class="flex items-center justify-between gap-4 px-5 py-4 rounded-xl border border-outline-variant/40 bg-surface-container/40 hover:border-primary hover:bg-primary/5 transition-colors group"
+                >
+                  <span class="font-body-md text-body-md text-on-surface">{o.label}</span>
+                  <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">
+                    arrow_forward
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+
+          <div class="p-6 rounded-2xl bg-surface-container/40 border border-outline-variant/40">
+            <p
+              class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-2"
+            >
+              Ons e-mailadres
+            </p>
+            <div class="flex flex-wrap items-center gap-3">
+              <a
+                href="mailto:info@talent2empower.nl"
+                class="font-headline-md text-headline-md text-primary hover:underline break-all"
+                >info@talent2empower.nl</a
+              >
+              <button
+                data-copy="info@talent2empower.nl"
+                class="inline-flex items-center gap-2 px-3 py-2 rounded-lg glass-panel text-on-surface font-label-sm text-label-sm hover:bg-primary/10 transition-colors shrink-0"
+              >
+                <span class="material-symbols-outlined text-[18px]" data-copy-icon
+                  >content_copy</span
+                >
+                <span data-copy-label>Kopieer</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center gap-6">
+            <div class="flex items-center gap-2 text-on-surface-variant">
+              <span class="material-symbols-outlined text-primary">handshake</span>
+              <span class="font-label-sm text-[10px] uppercase tracking-tighter"
+                >Persoonlijk contact</span
               >
             </div>
-            <div class="flex items-center gap-3 grayscale opacity-60">
-              <span class="material-symbols-outlined text-primary">security</span>
-              <span class="font-label-sm text-[10px] font-bold uppercase tracking-tighter"
-                >Veilige Gegevens</span
+            <div class="flex items-center gap-2 text-on-surface-variant">
+              <span class="material-symbols-outlined text-primary">schedule</span>
+              <span class="font-label-sm text-[10px] uppercase tracking-tighter"
+                >Reactie binnen 24u</span
               >
             </div>
           </div>
@@ -159,4 +156,41 @@ import nederlandImg from '../assets/images/contact-9b1c0cd6.jpg';
       </div>
     </div>
   </section>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Copy e-mail address to clipboard (robust fallback since desktops may have no mail client).
+    document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const value = btn.dataset.copy ?? '';
+        const icon = btn.querySelector('[data-copy-icon]');
+        const label = btn.querySelector('[data-copy-label]');
+        try {
+          await navigator.clipboard.writeText(value);
+        } catch {
+          const ta = document.createElement('textarea');
+          ta.value = value;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+        }
+        if (icon) icon.textContent = 'check';
+        if (label) label.textContent = 'Gekopieerd!';
+        setTimeout(() => {
+          if (icon) icon.textContent = 'content_copy';
+          if (label) label.textContent = 'Kopieer';
+        }, 2000);
+      });
+    });
+  </script>
 </BaseLayout>
